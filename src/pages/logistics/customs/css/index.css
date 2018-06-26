@@ -1,0 +1,141 @@
+.search{
+    position: relative;
+}
+.search-tab{
+    position: absolute;
+    width: 120px;
+    top: 10px;
+    right: 10px;
+    z-index: 0;
+}
+
+.option{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.default-search{
+    overflow: hidden;
+}
+.text-search{
+    border-top: 1px #ddd solid;
+    margin-top: 10px;
+    padding-top: 10px; 
+    overflow: hidden
+}
+.btn-search{
+    width: 504px;
+    overflow: hidden;
+    margin-top: 15px;
+    text-align: right;
+}
+.btn-search button{
+    margin-left: 10px;
+}
+.height-search{
+    overflow: hidden;
+    margin-top: 14px;
+    border-top: 1px #ddd solid;
+}
+.height-search .standard-form-row{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.height-search .ant-form-item-control-wrapper, .height-search .ant-calendar-picker{
+    width: 344px;
+}
+
+
+
+/* 物流信息 */
+.clear{
+    overflow: hidden;
+    clear: both;
+    padding-bottom: 5px;
+}
+.lgt-info {
+    width: 184px;
+}
+.lgt-info .title{
+    float: left;
+    width: 84px;
+    text-align: right;
+    font-weight: 600;
+}
+.lgt-info .content{
+    float: left;
+    width: 100px;
+    overflow: hidden;
+}
+.lgt-info .content span{
+    display: block;
+}
+
+/* 流程信息 */
+.time-info{
+
+}
+.time-info .item1, .time-info .item2{
+    float: left;
+}
+.time-info .item1{
+    width: 96px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.time-info .item1 .title{
+    float: left;
+    width: 48px;
+    text-align: right;
+    font-weight: 600;
+}
+.time-info .item1 .content{
+    float: left;
+    width: 48px;
+    overflow: hidden;
+}
+
+.time-info .item2{
+    width: 170px;
+    overflow: hidden;
+}
+.time-info .item2 .title{
+    float: left;
+    width: 60px;
+    text-align: right;
+    font-weight: 600;
+}
+.time-info .item2 .content{
+    float: left;
+    width: 110px;
+    overflow: hidden;
+}
+.anticon{
+    font-size: 14px;
+    font-weight: bold;
+}
+/* 操作 */
+.options-style{
+    overflow: hidden;
+    width: 100px;
+}
+.options-style ul, .options-style ul li{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.options-style ul li{
+    position: relative;
+    float: left;
+    color: #4d7bfe;
+    padding: 0px 5px;
+    cursor: pointer;
+}
+.ant-list-item-action-split {
+    background-color: #e8e8e8;
+    margin-top: -7px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 1px;
+    height: 14px;
+}

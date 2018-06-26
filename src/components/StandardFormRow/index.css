@@ -1,0 +1,13 @@
+.standard-form-row{
+    clear: both;
+}
+.standard-form-row .label{
+    float: left;
+    width: 160px;
+    line-height: 40px;
+    text-align: right;
+    font-weight: bold;
+}
+.standard-form-row .items{
+    float: left;
+}

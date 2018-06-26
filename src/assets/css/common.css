@@ -1,0 +1,262 @@
+.root {
+    overflow: hidden;
+}
+/* 字体颜色 */
+.text-danger{
+    color: #DE5048;
+}
+.text-success{
+    color: #48B771;
+}
+.text-warning{
+    color: #FFA335;
+}
+.text-info{
+    color: #30ACBF;
+}
+/* 内间距 */
+.padding-xm{
+    padding: 5px;
+}
+.padding-sm{
+     padding: 10px;
+ }
+.padding-md{
+    padding: 20px;
+}
+.padding-lg{
+    padding: 40px;
+}
+/* 外间距 */
+.margin-xm{
+    margin: 5px;
+}
+.margin-sm{
+    margin: 10px;
+}
+.margin-md{
+    margin: 20px;
+}
+.margin-lg{
+    margin: 40px;
+}
+/* 定向内间距-最小-5 */
+.padding-xm-left{
+    padding-left: 5px;
+}
+.padding-xm-top{
+    padding-top: 5px;
+}
+.padding-xm-right{
+    padding-right: 5px;
+}
+.padding-xm-bottom{
+    padding-bottom: 5px;
+}
+/* 定向内间距-小-10 */
+.padding-sm-left{
+    padding-left: 10px;
+}
+.padding-sm-top{
+    padding-top: 10px;
+}
+.padding-sm-right{
+    padding-right: 10px;
+}
+.padding-sm-bottom{
+    padding-bottom: 10px;
+}
+/* 定向内间距-中-20 */
+.padding-md-left{
+    padding-left: 20px;
+}
+.padding-md-top{
+    padding-top: 20px;
+}
+.padding-md-right{
+    padding-right: 20px;
+}
+.padding-md-bottom{
+    padding-bottom: 20px;
+}
+/* 定向内间距-大-40 */
+.padding-lg-left{
+    padding-left: 40px;
+}
+.padding-lg-top{
+    padding-top: 40px;
+}
+.padding-lg-right{
+    padding-right: 40px;
+}
+.padding-lg-bottom{
+    padding-bottom: 40px;
+}
+/* 定向外间距-最小-5 */
+.margin-xm-left{
+    margin-left: 5px;
+}
+.margin-xm-top{
+    margin-top: 5px;
+}
+.margin-xm-right{
+    margin-right: 5px;
+}
+.margin-xm-bottom{
+    margin-bottom: 5px;
+}
+/* 定向外间距-小-10 */
+.margin-sm-left{
+    margin-left: 10px;
+}
+.margin-sm-top{
+    margin-top: 10px;
+}
+.margin-sm-right{
+    margin-right: 10px;
+}
+.margin-sm-bottom{
+    margin-bottom: 10px;
+}
+/* 定向外间距-中-20 */
+.margin-md-left{
+    margin-left: 20px;
+}
+.margin-md-top{
+    margin-top: 20px;
+}
+.margin-md-right{
+    margin-right: 20px;
+}
+.margin-md-bottom{
+    margin-bottom: 20px;
+}
+/* 定向外间距-大-40 */
+.margin-lg-left{
+    margin-left: 40px;
+}
+.margin-lg-top{
+    margin-top: 40px;
+}
+.margin-lg-right{
+    margin-right: 40px;
+}
+.margin-lg-bottom{
+    margin-bottom: 40px;
+}
+/* 上下内间距-最小-5 */
+.padding-xm-top-bottom{
+    padding: 5px 0px;
+}
+/* 上下内间距-小-10 */
+.padding-sm-top-bottom{
+    padding: 10px 0px;
+}
+/* 上下内间距-中-10 */
+.padding-md-top-bottom{
+    padding: 20px 0px;
+}
+/* 上下内间距-大-40 */
+.padding-md-top-bottom{
+    padding: 40px 0px;
+}
+/* 左右浮动 */
+.pull-left{
+    float: left;
+}
+.pull-right{
+    float: right;
+}
+/* 防止布局被撑开 */
+.overflow-hidden{
+    overflow: hidden;
+}
+/* 背景白色容器 */
+.breadcrumb{
+    background-color: #fff;
+    box-shadow: 0px 0px 5px #ddd;
+}
+/* 行元素居中 */
+.text-center{
+    text-align: center;
+}
+/* 行元素居左 */
+.text-left{
+    text-align: left;
+}
+/* 行元素居右 */
+.text-right{
+    text-align: right;
+}
+/* 清除浮动 */
+.clear{
+    clear: both;
+}
+/* 按钮块状 */
+.ant-btn-block{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+}
+.loading{
+    width: 32px;
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+/* antd 修改全局样式 */
+
+/* 表格 */
+.ant-table-small{
+    border-radius: 0px !important;
+}
+.ant-table table{
+    padding: 0px !important;
+}
+.ant-table table thead tr th{
+    background: #F9FAFD !important; 
+    text-align: center
+}
+.ant-table table thead tr th:last-child{
+    text-align: left;
+    padding-left: 15px !important;
+}
+.ant-table table thead tr th, .ant-table table tbody tr td{
+    border-right: 1px #ddd solid;
+}
+.ant-table table thead tr th:last-child, .ant-table table tbody tr td:last-child{
+    border-right: none;
+}
+.ant-table table tbody tr td{
+    font-size: 12px !important;
+}
+
+/* 按钮 */
+.ant-btn:hover, .ant-btn:focus{
+    border: 1px #4d7bfe solid !important;
+    background: #4d7bfe !important;
+    color: #fff !important;
+}
+.ant-btn-primary{
+    background-color: #4d7bfe !important;
+    border-color: #4d7bfe !important;
+}
+
+/* radio-bottom */
+.ant-radio-button-wrapper{
+    font-size: 12px !important;
+}
+.ant-radio-button-wrapper-checked{
+    background: #4d7bfe !important;
+    color: #fff !important;
+}
+
+/* tab */
+.ant-tag-checkable-checked{
+    background: #4d7bfe !important;
+    
+}
+
+
+
+

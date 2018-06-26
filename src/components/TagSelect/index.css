@@ -1,0 +1,14 @@
+.paved-selected {
+
+}
+.paved-selected .ant-tag-checkable{
+    width: 92px;
+    text-align: center;
+    border: 1px #ddd solid;
+    margin-right: 15px;
+    border-radius: 0px;
+    padding: 0px;
+}
+.paved-selected .ant-tag-checkable-checked {
+    border: 0px;
+}

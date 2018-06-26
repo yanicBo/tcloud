@@ -1,0 +1,37 @@
+.account-login {
+    background: url("../../assets/img/tcloud_login_bg.jpg") no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    height: 100vh;
+}
+.main-login {
+    width: 780px;
+    margin: 0px auto;
+    margin-top: 10%;
+    background: #fff;
+    padding: 50px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.main-login .left {
+    float: left;
+    width: 50%;
+}
+.main-login .left .img {
+    width: 280px;
+    height: 254px;
+    background: url("../../assets/img/tcloud_login_img.png") no-repeat;
+    background-size: cover;
+}
+.main-login .right {
+    float: left;
+    width: 50%;
+}
+.main-login .right .logo{
+    width: 160px;
+    height: 53px;
+    margin: 0px auto;
+    margin-bottom: 20px;
+    background: url("../../assets/img/tclould_login_logo.png") no-repeat;
+    background-size: cover;
+}
