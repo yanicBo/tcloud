@@ -41,11 +41,6 @@ class Search extends Component {
         this.props.customsListFetch();
     }
 
-    // 重置
-    onReset = () => {
-        this.props.form.resetFields();
-    }
-
     render() {
         const textSearch = this.state.isSearch ?
             <TextSearch {...this.props} />
@@ -55,7 +50,7 @@ class Search extends Component {
             <HightSearch {...this.props} />
         ) : null;
         const btnSearch = this.state.isSearch ? (
-            <BtnSearch {...this.props} onChangeHightSearch={this.onChangeHightSearch} onReset={this.onReset} isHightSearch={this.state.isHightSearch} />
+            <BtnSearch {...this.props} onChangeHightSearch={this.onChangeHightSearch} isHightSearch={this.state.isHightSearch} />
         ) : null;
 
         return (

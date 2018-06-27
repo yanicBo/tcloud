@@ -35,10 +35,23 @@ class App extends Component {
         });
     }
 
+    // 重置
+    onReset = () => {
+        this.setState({
+            tagValue: {
+                declarationType: [0],
+                companyId: [0],
+                logisticsStatus: [0],
+                depotType: [0],
+            }
+        })
+        this.props.form.resetFields();
+    }
+
     render() {
         return (
             <div>
-                <Search {...this.props} customsListFetch={this.customsListFetch} tagValue={this.state.tagValue} />
+                <Search {...this.props} customsListFetch={this.customsListFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
                     <Option {...this.props} />
                     <List {...this.props} />
