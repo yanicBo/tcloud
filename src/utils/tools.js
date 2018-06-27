@@ -1,4 +1,4 @@
-import { getCookie, setCookie } from "./cookie.js";
+import { getCookie } from "./cookie.js";
 
 /**
  * 获取登录用户ticket

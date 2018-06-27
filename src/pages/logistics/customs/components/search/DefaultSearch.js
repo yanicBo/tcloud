@@ -5,7 +5,6 @@ const FormItem = Form.Item;
 import StandardFormRow from '../../../../../components/StandardFormRow';
 import TagSelect from '../../../../../components/TagSelect';
 import { status_customs, status_logistics, status_warehouse, status_company } from '../../../data';
-import { filterRequest } from '../../../../../utils';
 
 class DefaultSearch extends Component {
     constructor(props) {
@@ -22,22 +21,8 @@ class DefaultSearch extends Component {
         this.props.form.setFieldsValue({
             [name]: param
         })
-        this.customs_list_fetch()
+        this.props.customsListFetch()
     }
-
-    // 请求列表
-    customs_list_fetch = () => {
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                const filter = filterRequest(values)
-                console.log(filter)
-                this.props.customs_list_fetch({ name: 'data', value: filter });
-            }
-        });
-    }
-
-    // 重置
-
 
     render() {
         const { getFieldDecorator } = this.props.form;

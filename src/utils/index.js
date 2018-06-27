@@ -9,3 +9,5 @@ export { getPath } from './path';
 export { ticket, addKey } from './tools';
 
 export { filterRequest } from './filter_request';
+
+export { debug } from './debug';

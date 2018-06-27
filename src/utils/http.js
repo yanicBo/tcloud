@@ -6,10 +6,11 @@
 */
 
 import axios from 'axios';
-import { setCookie } from "./cookie";
 import { message } from 'antd';
 import { config } from "../configs/index";
 import { ticket } from "./tools.js";
+import { setCookie } from "./cookie.js";
+import { debug } from "./debug.js";
 
 axios.defaults.baseURL = config.path;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
@@ -106,6 +107,16 @@ export const req = {
             }).then(res => {
                 if(res){
                     if(res.data.state === '000001'){
+                        debug('ajax[' + url + '] response result:', {
+                            request: {
+                                url: url,
+                                data: param,
+                                type: (type || 'post')
+                            },
+                            response: {
+                                res: res
+                            }
+                        })
                         resolve(res.data)
                     } else {
                         switch (res.data.state) {

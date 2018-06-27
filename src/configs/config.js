@@ -4,7 +4,8 @@ export const config = {
     version: 'v1.0.0',                                          // 版本号
     imgMaxSize: 500 * 1024,                                     // 图片大小500KB以内
     defaultImg: require('../assets/img/default.png'),            // 默认图片
-    path: '/api/'
+    path: '/api/',
+    isDebug: true                                                   // 是否开启debug模式
 }
 
 

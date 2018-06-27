@@ -7,20 +7,12 @@ import HightSearch from './search/HightSearch';
 import BtnSearch from './search/BtnSearch';
 import TabSearch from './search/TabSearch';
 
-import { filterRequest } from '../../../../utils';
-
 class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isSearch: false,        // 是否切换搜索
-            isHightSearch: false,   // 是否切换高级搜索
-            tagValue: {
-                declarationType: [0],
-                companyId: [0],
-                logisticsStatus: [0],
-                depotType: [0]
-            }
+            isHightSearch: false    // 是否切换高级搜索
         };
     }
 
@@ -43,30 +35,14 @@ class Search extends Component {
         }
     }
 
-    // 请求列表
-    customs_list_fetch = () => {
-        this.props.form.validateFields((err, values) => {
-            if (!err) {
-                const filter = filterRequest(values)
-                console.log(filter)
-                this.props.customs_list_fetch({ name: 'data', value: filter });
-            }
-        });
-    }
-
     // 全局搜索
     onSubmit = (event) => {
         event.preventDefault();
-        this.customs_list_fetch();
-
+        this.props.customsListFetch();
     }
 
     // 重置
     onReset = () => {
-        this.setState({
-            tagValue: []
-        });
-        console.log(this.state.tagValue)
         this.props.form.resetFields();
     }
 
@@ -81,12 +57,12 @@ class Search extends Component {
         const btnSearch = this.state.isSearch ? (
             <BtnSearch {...this.props} onChangeHightSearch={this.onChangeHightSearch} onReset={this.onReset} isHightSearch={this.state.isHightSearch} />
         ) : null;
-        const { tagValue } = this.state;
+
         return (
             <div className="search breadcrumb padding-sm overflow-hidden">
                 <TabSearch {...this.props} onChangeSearch={this.onChangeSearch} />
                 <Form layout="inline" onSubmit={this.onSubmit}>
-                    <DefaultSearch {...this.props} tagValue={tagValue}/>
+                    <DefaultSearch {...this.props}/>
                     {textSearch}
                     {heightSearch}
                     {btnSearch}

@@ -11,12 +11,12 @@ class TagSelect extends Component {
     };
 
     onChange = (item) => {
-        const { onChange, name, values, isMulti } = this.props;
+        const { onChange, name, values, isMulti } = this.props; 
         let array;
         let index = values.indexOf(item.id);
         if (isMulti && item.id !== 0) {
             array = values.filter((value) => value !== 0);
-            if (index > -1) {
+            if (index > 0) {
                 array.splice(index, 1);
             } else {
                 array.push(item.id);
