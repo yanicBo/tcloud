@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import { Form } from 'antd';
 
 import Search from "./search/index";
-import List from "./list";
+import List from "./list/index";
 import Option from "./list_opiton";
 import actions from '../actions';
 

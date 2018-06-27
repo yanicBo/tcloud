@@ -1,83 +1,9 @@
 import React, { Component } from 'react';
-import { Menu, Dropdown, Icon, Input } from 'antd';
-import { timestampFromat } from '../../../../utils';
+import { timestampFromat } from '../../../../../utils';
 
-class EditableCell extends Component {
-    state = {
-        value: this.props.value,
-        editable: false,
-    }
-    handleChange = (e) => {
-        const value = e.target.value;
-        this.setState({ value });
-    }
-    check = () => {
-        this.setState({ editable: false });
-        if (this.props.onChange) {
-            this.props.onChange(this.state.value);
-        }
-    }
-    edit = () => {
-        this.setState({ editable: true });
-    }
-    render() {
-        const { value, editable } = this.state;
-        return (
-            <div className="editable-cell">
-                {
-                    editable ? (
-                        <Input
-                            value={value}
-                            onChange={this.handleChange}
-                            onPressEnter={this.check}
-                            suffix={
-                                <Icon
-                                    type="check"
-                                    className="editable-cell-icon-check"
-                                    onClick={this.check}
-                                />
-                            }
-                        />
-                    ) : (
-                            <div style={{ paddingRight: 24 }}>
-                                {value || ' '}
-                                <Icon
-                                    type="edit"
-                                    className="editable-cell-icon"
-                                    onClick={this.edit}
-                                />
-                            </div>
-                        )
-                }
-            </div>
-        );
-    }
-}
+import Options from './Options';
+import EditableCell from './EditableCell';
 
-const onCellChange = (key, dataIndex) => {
-    return (value) => {
-        const dataSource = [...this.state.dataSource];
-        const target = dataSource.find(item => item.key === key);
-        if (target) {
-            target[dataIndex] = value;
-            this.setState({ dataSource });
-        }
-    };
-}
-
-const menu = (
-    <Menu>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.alipay.com/">1st menu item</a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.taobao.com/">2nd menu item</a>
-        </Menu.Item>
-        <Menu.Item>
-            <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">3rd menu item</a>
-        </Menu.Item>
-    </Menu>
-);
 
 export const columnsList = [
     {
@@ -176,7 +102,7 @@ export const columnsList = [
         render: (text, record) => (
             <EditableCell
                 value={text}
-                onChange={onCellChange(record.key, 'name')}
+                onChange={this.onCellChange(record.key, 'name')}
             />
         ),
     }, {
@@ -196,21 +122,7 @@ export const columnsList = [
         width: 120,
         render: (text, record) => {
             return (
-                <div className="options-style">
-                    <ul>
-                        <li>
-                            制单
-                            <em className="ant-list-item-action-split"></em>
-                        </li>
-                        <li>
-                            <Dropdown overlay={menu}>
-                                <span>
-                                    更多 <Icon type="down"/>
-                                </span>
-                            </Dropdown>
-                        </li>
-                    </ul>
-                </div>
+                <Options type={record.auditStatus} id={record.id} />
             )
         }
     }

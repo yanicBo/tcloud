@@ -4,7 +4,7 @@ const Mock = require('mockjs');
 Mock.mock('/api/customs/list', {
     "data|10-20": [
         {
-            "auditStatus": "待核对",
+            "auditStatus": "待制单",
             "auditTime": 1524551099000,
             "audits": "吴耀",
             "campany": {
