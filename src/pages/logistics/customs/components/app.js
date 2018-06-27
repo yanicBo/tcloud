@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { Form } from 'antd';
 
-import Search from "./search";
+import Search from "./search/index";
 import List from "./list";
 import Option from "./list_opiton";
 import actions from '../actions';
 
 import { filterRequest } from '../../../../utils';
+import { page } from '../../../../configs';
 
 class App extends Component {
 
@@ -22,10 +23,12 @@ class App extends Component {
     }
 
     // 请求列表
-    customsListFetch = () => {
+    customsListFetch = (pageNumber, pageData ) => {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 const filter = filterRequest(values)
+                filter['pageNumber'] = pageNumber || page.defaultCurrent;
+                filter['pageData'] = pageData || page.defaultPageSize;
                 const filters = { ...this.state.tagValue, ...filter}
                 this.setState({
                     tagValue: filters
@@ -53,8 +56,8 @@ class App extends Component {
             <div>
                 <Search {...this.props} customsListFetch={this.customsListFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
-                    <Option {...this.props} />
-                    <List {...this.props} />
+                    <Option />
+                    <List {...this.props} customsListFetch={this.customsListFetch}/>
                 </div>
             </div>
         );

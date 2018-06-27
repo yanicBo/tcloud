@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Form } from 'antd';
 
-import DefaultSearch from './search/DefaultSearch';
-import TextSearch from './search/TextSearch';
-import HightSearch from './search/HightSearch';
-import BtnSearch from './search/BtnSearch';
-import TabSearch from './search/TabSearch';
+import DefaultSearch from './DefaultSearch';
+import TextSearch from './TextSearch';
+import HightSearch from './HightSearch';
+import BtnSearch from './BtnSearch';
+import TabSearch from './TabSearch';
 
 class Search extends Component {
     constructor(props) {

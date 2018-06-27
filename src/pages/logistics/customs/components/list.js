@@ -28,12 +28,10 @@ class List extends Component {
             }
         });
     }
-    changePage = () => {
-        
-    }
     render() {
         const { data } = this.props.customs_list_reducer;
         const { total, current, pageSize } = this.props.paginationReducer;
+        const { customsListFetch } = this.props;
         return (
             <div>
                 <div className="table">
@@ -55,8 +53,8 @@ class List extends Component {
                         showQuickJumper                             // 是否可以快速跳转至某页
                         total={total}                             // 数据总数
                         pageSize={pageSize}                       // 每页条数
-                        onChange={this.changePage}                // 页码改变的回调，参数是改变后的页码及每页条数
-                        onShowSizeChange={this.changePage}        // pageSize 变化的回调
+                        onChange={customsListFetch}                // 页码改变的回调，参数是改变后的页码及每页条数
+                        onShowSizeChange={customsListFetch}        // pageSize 变化的回调
                         size="small"
                     />
                 </div>
