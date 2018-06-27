@@ -81,12 +81,12 @@ class Search extends Component {
         const btnSearch = this.state.isSearch ? (
             <BtnSearch {...this.props} onChangeHightSearch={this.onChangeHightSearch} onReset={this.onReset} isHightSearch={this.state.isHightSearch} />
         ) : null;
-
+        const { tagValue } = this.state;
         return (
             <div className="search breadcrumb padding-sm overflow-hidden">
                 <TabSearch {...this.props} onChangeSearch={this.onChangeSearch} />
                 <Form layout="inline" onSubmit={this.onSubmit}>
-                    <DefaultSearch {...this.props} tagValue={this.state.tagValue}/>
+                    <DefaultSearch {...this.props} tagValue={tagValue}/>
                     {textSearch}
                     {heightSearch}
                     {btnSearch}

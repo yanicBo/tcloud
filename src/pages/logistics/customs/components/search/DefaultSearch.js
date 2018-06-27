@@ -19,7 +19,6 @@ class DefaultSearch extends Component {
     }
     // 条件筛选
     handleFormSubmit = (param, name) => {
-        console.log(this.props.tagValue)
         this.props.form.setFieldsValue({
             [name]: param
         })
@@ -32,7 +31,6 @@ class DefaultSearch extends Component {
             if (!err) {
                 const filter = filterRequest(values)
                 console.log(filter)
-                
                 this.props.customs_list_fetch({ name: 'data', value: filter });
             }
         });
@@ -44,7 +42,7 @@ class DefaultSearch extends Component {
     render() {
         const { getFieldDecorator } = this.props.form;
         const { company } = this.state;
-        const {tagValue} = this.props;
+        const { tagValue } = this.props;
         return (
             <div className="default-search">
                 <StandardFormRow title="报关单状态(多选)：">

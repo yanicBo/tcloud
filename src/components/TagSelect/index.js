@@ -12,7 +12,7 @@ class TagSelect extends Component {
 
     onChange = (item) => {
         const { onChange, name, values, isMulti } = this.props;
-        let array = [];
+        let array;
         let index = values.indexOf(item.id);
         if (isMulti && item.id !== 0) {
             array = values.filter((value) => value !== 0);
@@ -47,8 +47,9 @@ class TagSelect extends Component {
                             checked={values.indexOf(item.id) > -1 ? true : false}
                             key={index}
                             title={item.title || item.name}
-                            onChange={() => this.onChange(item)}>
-                            {item.name}
+                            onChange={() => this.onChange(item)}
+                        >
+                            { item.name }
                         </CheckableTag>
                     )
                 }
