@@ -1,0 +1,30 @@
+.tclould-tab{
+
+}
+.tclould-tab .ant-tabs-bar{
+    border-bottom: 1px #ddd solid;
+}
+.tclould-tab .ant-tabs-ink-bar{
+    background-color: #fff;
+    bottom: 0px;
+    left: -1px;
+}
+.tclould-tab .ant-tabs-nav-container{
+    overflow: initial;
+    margin-bottom: 0px;
+}
+.tclould-tab  .ant-tabs-nav .ant-tabs-tab{
+    margin: 0px;
+    border: 1px #ddd solid;
+    border-left: 0px;
+    background: #F9FAFD
+}
+.tclould-tab .ant-tabs-top .ant-tabs-ink-bar-animated {
+    transition: none;
+    -webkit-transition: none
+}
+.tclould-tab .ant-tabs-nav .ant-tabs-tab-active{
+    color: #4d7bfe;
+    border-top: 1px #4d7bfe solid;
+    background: #fff;
+}

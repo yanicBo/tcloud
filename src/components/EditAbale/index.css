@@ -1,0 +1,32 @@
+.tcloud-editable .ant-row.ant-form-item{
+    display: flex;
+    margin: 0px;
+}
+.tcloud-editable .ant-form-item-label{
+    width: 40%;
+    text-align: right;
+}
+.tcloud-editable .ant-form-item-control-wrapper{
+    width: 100%;
+    position: relative;
+}
+/* .tcloud-editable .ant-form-item-label label:after{
+    margin-right: 20px
+} */
+.tcloud-editable .ant-form-item-children{
+    position: initial;
+}
+.tcloud-editable .anticon-edit{
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    cursor: pointer;
+}
+.tcloud-editable .anticon-check{
+    cursor: pointer;
+}
+.tcloud-editable .editable-cell .font{
+    padding-right: 24px;
+    line-height: 20px;
+    margin-top: 10px;
+}
