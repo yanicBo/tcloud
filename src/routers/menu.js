@@ -11,7 +11,7 @@ export const menuMain = [
     },
     {
         "name": "物流",
-        "router": "logistics",
+        "router": "logistics/customs/list",
         "id": "3"
     },
     {

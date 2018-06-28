@@ -5,6 +5,7 @@ import { Menu, Dropdown, Icon } from 'antd';
 class Options extends Component {
 
     render() {
+        const { id } = this.props;
         // 子操作
         const submenu = () => {
             let type = this.props.type;
@@ -13,7 +14,7 @@ class Options extends Component {
                     return (
                         <Menu>
                             <Menu.Item>
-                                <Link to="/">查看报关资料</Link>
+                                <Link to={'/logistics/customs/list/detail/' + id}>查看报关资料</Link>
                             </Menu.Item>
                             <Menu.Item>
                                 <Link to="/">撤销合并</Link>
@@ -64,7 +65,7 @@ class Options extends Component {
             <div className="options-style">
                 <ul>
                     <li>
-                        <Link to="/">制单</Link>
+                        <Link to={'/logistics/customs/list/make/' + id}>制单</Link>
                         <em className="ant-list-item-action-split"></em>
                     </li>
                     <li>
