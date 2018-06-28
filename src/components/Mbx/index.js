@@ -1,26 +1,36 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Breadcrumb, Icon } from 'antd';
+import { breadcrumbNameMap } from './map';
 
-class TagSelect extends Component {
+class Mbx extends Component {
 
     render() {
+        const pathname = location.pathname;
+        const pathSnippets = pathname.split('/').filter(i => i);
         return (
-            <div className="breadcrumb">
-                <Breadcrumb>
-                    <Breadcrumb.Item href="">
-                        <Icon type="home" />
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item href="">
-                        <span>Application List</span>
-                    </Breadcrumb.Item>
+            <div className="breadcrumb padding-md-left padding-md-right padding-sm-top padding-sm-bottom">
+                <Breadcrumb separator="/">
                     <Breadcrumb.Item>
-                        Application
+                        <Link to="/"><Icon type="home" /></Link>
                     </Breadcrumb.Item>
+                    {
+                        pathSnippets.map((item, index) => {
+                            const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
+                            return (
+                                <Breadcrumb.Item key={url}>
+                                    <Link to={url}>
+                                        {breadcrumbNameMap[url]}
+                                    </Link>
+                                </Breadcrumb.Item>
+                            )
+
+                        })
+                    }
                 </Breadcrumb>
             </div>
         );
     }
 }
 
-export default TagSelect;
-
+export default Mbx;

@@ -24,7 +24,8 @@ const Make = (props) => (
 const Router = () => {
     return (
         <div className="padding-md">
-            <Route exact path="/logistics" render={() => <Customs/> }/>
+            <Route exact path="/logistics" breadcrumbName="" render={() => <Customs/> }/>
+            <Route exact path="/logistics/customs" render={() => <Customs/> }/>
             <Route exact path="/logistics/customs/list" render={() => <Customs/> }/>
             <Route exact path="/logistics/customs/list/make/:id" render={() => <Make/> }/>
         </div>

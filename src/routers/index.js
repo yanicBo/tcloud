@@ -41,7 +41,7 @@ const RootRouter = (props) => {
         <Switch>
             <Route path="/" exact render={() => <Home />} />
             <Route path="/oms" render={() => <Oms />} />
-            <Route path="/logistics/customs/list" render={() => <Lgt />} />
+            <Route path="/logistics" render={() => <Lgt />} />
             <Route path="/app" render={() => <App />} />
         </Switch>
     )
