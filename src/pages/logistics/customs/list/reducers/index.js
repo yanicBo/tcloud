@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { customs_list } from '../actions';
-import { paginationReducer } from '../../../../reduxs/pagination';
+import { paginationReducer } from '../../../../../reduxs/pagination';
 
 // 列表
 const customs_list_reducer = (

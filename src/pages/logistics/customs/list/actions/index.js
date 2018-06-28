@@ -1,7 +1,7 @@
-import { req } from '../../../../utils';
-import { page } from '../../../../configs';
-import { paginationAction } from '../../../../reduxs/pagination';
-require('../../mock/list');
+import { req } from '../../../../../utils';
+import { page } from '../../../../../configs';
+import { paginationAction } from '../../../../../reduxs/pagination';
+require('../../../mock/list');
 
 
 /* 报关单列表 */
