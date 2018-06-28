@@ -5,7 +5,7 @@ import { Form } from 'antd';
 
 import Search from "./search/index";
 import List from "./list/index";
-import Option from "./list_opiton";
+import Option from "./opiton";
 import actions from '../actions';
 
 import { filterRequest } from '../../../../../utils';

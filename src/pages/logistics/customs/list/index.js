@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 // import { createLogger } from 'redux-logger';
 import reducer from './reducers';
-import Container from './components/container';
+import App from './components/index';
 
 // if (process.env.NODE_ENV !== 'production') {
 //     middleware.push(createLogger())
@@ -22,7 +22,7 @@ export default class Entrance extends Component {
     render() {
         return (
             <Provider store={ store }>
-                <Container {...this.props}/>
+                <App {...this.props}/>
             </Provider>
         );
     }
