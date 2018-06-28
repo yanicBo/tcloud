@@ -5,7 +5,7 @@ import Bundle from '../../../components/bundle';
 
 // 报关单
 const Customs = (props) => (
-    <Bundle load={() => import('../customs/list/index.js')}>
+    <Bundle load={() => import('../customs/list')}>
         {
             (Customs) => Customs ? <Customs {...props} /> : <div className="loading"><Spin size="large"/></div>
         }
@@ -14,7 +14,7 @@ const Customs = (props) => (
 
 // 待制单
 const Make = (props) => (
-    <Bundle load={() => import('../customs/list/index.js')}>
+    <Bundle load={() => import('../customs/make')}>
         {
             (Make) => Make ? <Make {...props} /> : <div className="loading"><Spin size="large"/></div>
         }
