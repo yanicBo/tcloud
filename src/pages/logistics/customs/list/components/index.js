@@ -53,7 +53,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className="logistics">
                 <Search {...this.props} customsListFetch={this.customsListFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
                     <Option />

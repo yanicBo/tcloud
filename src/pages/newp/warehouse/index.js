@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './css/index.css';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';

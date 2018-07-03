@@ -3,12 +3,16 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { Form } from 'antd';
 
+import Search from "./search/index";
+import List from "./list/index";
+import Option from "./opiton";
 import actions from '../actions';
 
 import { filterRequest } from '../../../../utils';
 import { page } from '../../../../configs';
 
 class App extends Component {
+
     state = {
         tagValue: {
             declarationType: [0],
@@ -49,8 +53,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                jskjfskjflj
+            <div className="newp">
+                <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
+                <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
+                    <Option />
+                    <List {...this.props} listFetch={this.listFetch}/>
+                </div>
             </div>
         );
     }
