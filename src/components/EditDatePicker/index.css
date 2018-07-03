@@ -1,0 +1,37 @@
+.tcloud-edit-date-picker .ant-row.ant-form-item{
+    display: flex;
+    margin: 0px;
+}
+.tcloud-edit-date-picker .ant-form-item-label{
+    width: 40%;
+    text-align: right;
+}
+.tcloud-edit-date-picker .ant-form-item-control-wrapper{
+    width: 100%;
+    position: relative;
+}
+.tcloud-edit-date-picker .ant-calendar-picker{
+    width: 100%;
+}
+.tcloud-edit-date-picker .ant-calendar-picker-input{
+    border: none;
+}
+.tcloud-edit-date-picker .ant-calendar-picker-clear{
+    display: none;
+}
+.tcloud-edit-date-picker .ant-calendar-picker-icon:after{
+    color: #666;
+    content: "\E692";
+    cursor: pointer;
+}
+/* 必填项 */
+.tcloud-required .ant-form-item-label label:before{
+    display: inline-block;
+    margin-right: 4px;
+    content: "*";
+    font-family: SimSun;
+    line-height: 1;
+    font-size: 14px;
+    color: #f5222d;
+}
+

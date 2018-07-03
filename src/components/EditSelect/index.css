@@ -40,3 +40,13 @@
     font-size: 14px;
     color: #f5222d;
 }
+.tcloud-editable .editable-cell .anticon-close-circle{
+    position: absolute;
+    top: 14px;
+    right: 30px;
+}
+
+.tcloud-editable .editable-cell .anticon-close-circle:before{
+    font-size: 12px;
+    color: #999;
+}

@@ -26,9 +26,9 @@ class EditAbale extends Component {
     }
     render() {
         const { value, editable } = this.state;
-        const { title } = this.props;
+        const { title, classs, isEdit } = this.props;
         return (
-            <div className="tcloud-editable">
+            <div className={"tcloud-editable" + " " + classs}>
                 <FormItem label={title}>
                     <div className="editable-cell">
                         {
@@ -48,11 +48,16 @@ class EditAbale extends Component {
                             ) : (
                                     <div className="font">
                                         {value || ' '}
-                                        <Icon
-                                            type="edit"
-                                            className="editable-cell-icon"
-                                            onClick={this.edit}
-                                        />
+                                        {
+                                            isEdit ? (
+                                                <Icon
+                                                    type="edit"
+                                                    className="editable-cell-icon"
+                                                    onClick={this.edit}
+                                                />
+                                            ) : null
+                                        }
+
                                     </div>
                                 )
                         }

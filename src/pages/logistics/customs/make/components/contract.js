@@ -4,7 +4,7 @@ import moment from 'moment';
 import EditAbale from '../../../../../components/EditAbale';
 import EditDatePicker from '../../../../../components/EditDatePicker'
 
-class Campany extends Component {
+class Contract extends Component {
     onCellChange = (key, name) => {
 
     }
@@ -13,27 +13,37 @@ class Campany extends Component {
             <Form>
                 <Row gutter={24}>
                     <Col span={6}>
-                        <EditDatePicker
+                        <EditAbale
                             classs="tcloud-required"
-                            title="申报日期"
-                            value={moment('2015-01-01', 'YYYY-MM-DD')}
-                            format="YYYY-MM-DD"
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                    <Col span={6}>
-                        <EditAbale
-                            title="联系人"
-                            value={"杨波"}
+                            title="Quality standard"
+                            value={"YKS Standard"}
                             isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
                     <Col span={6}>
                         <EditAbale
-                            title="手机号码"
+                            classs="tcloud-required"
+                            title="Warranty"
+                            value={"YKS Standard"}
                             isEdit={true}
-                            value={"15879187716"}
+                            onChange={this.onCellChange('aaaaa', 'name')}
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <EditAbale
+                            classs="tcloud-required"
+                            title="Payment terms"
+                            value={"TT 60DAYS"}
+                            isEdit={true}
+                            onChange={this.onCellChange('aaaaa', 'name')}
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <EditAbale
+                            title="Payment"
+                            value={"TT 60DAYS"}
+                            isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
@@ -41,38 +51,37 @@ class Campany extends Component {
                 <Row gutter={24}>
                     <Col span={6}>
                         <EditAbale
-                            title="开票方"
-                            isEdit={true}
                             classs="tcloud-required"
-                            value={"Shenzhen YoukeshuTechnology Co.,Ltd."}
+                            title="Beneficiary"
+                            value={"ShenzhenYoukeshu Technology Co.,Ltd."}
+                            isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
                     <Col span={6}>
                         <EditAbale
-                            title="公司地址"
-                            isEdit={true}
                             classs="tcloud-required"
-                            value={"深圳市南山区前海路丽湾大厦1909"}
+                            title="Beneficiary Bank"
+                            value={"中国建设银行深圳华南城支"}
+                            isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
                     <Col span={6}>
                         <EditAbale
-                            title="电话号码"
-                            isEdit={true}
                             classs="tcloud-required"
-                            value={"0755-88888888"}
+                            title="SWIFT Code"
+                            value={"PCBCCNBJSZX"}
+                            isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
-
                     <Col span={6}>
                         <EditAbale
-                            title="Email"
-                            isEdit={true}
                             classs="tcloud-required"
-                            value={"youkeshu@youkeshu.com"}
+                            title="Account No"
+                            value={"44201018800052500000"}
+                            isEdit={true}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
@@ -80,56 +89,27 @@ class Campany extends Component {
                 <Row gutter={24}>
                     <Col span={6}>
                         <EditAbale
-                            title="付款方"
+                            title="Intermediary Bank"
+                            value={"ShenzhenYoukeshu Technology Co.,Ltd."}
                             isEdit={true}
+                            onChange={this.onCellChange('aaaaa', 'name')}
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <EditAbale
                             classs="tcloud-required"
+                            title="The Seller"
+                            value={"中国建设银行深圳华南城支"}
+                            isEdit={true}
+                            onChange={this.onCellChange('aaaaa', 'name')}
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <EditAbale
+                            classs="tcloud-required"
+                            title="The Buyer"
                             value={"YKS Electronic Commerce Co., Limited"}
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                    <Col span={6}>
-                        <EditAbale
-                            title="公司地址"
                             isEdit={true}
-                            classs="tcloud-required"
-                            value={"Unit906-907,9/f,The octagon,Tsuen Wan ,Hong Kong"}
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                    <Col span={6}>
-                        <EditAbale
-                            title="电话号码"
-                            isEdit={true}
-                            classs="tcloud-required"
-                            value={"0755-88888888"}
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                    <Col span={6}>
-                        <EditAbale
-                            title="Email"
-                            isEdit={true}
-                            value={"youkeshu@youkeshu.com"}
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                </Row>
-                <Row gutter={24}>
-                    <Col span={6}>
-                        <EditAbale
-                            title="收发货人"
-                            isEdit={true}
-                            classs="tcloud-required"
-                            value={"深圳市有棵树科技股份有限公司 4403160HT6"}
-                            onChange={this.onCellChange('aaaaa', 'name')}
-                        />
-                    </Col>
-                    <Col span={6}>
-                        <EditAbale
-                            title="生产销售单位"
-                            isEdit={true}
-                            classs="tcloud-required"
-                            value={"深圳市有棵树科技股份有限公司 4403160HT6"}
                             onChange={this.onCellChange('aaaaa', 'name')}
                         />
                     </Col>
@@ -139,4 +119,4 @@ class Campany extends Component {
     }
 }
 
-export default Campany;
+export default Contract;
