@@ -25,7 +25,7 @@ export const menu = [
         "sub": [
             {
                 "name": "全部订单",
-                "router": "oms/list/smt",
+                "router": "oms/list/all",
                 "id": "9"
             },
             {

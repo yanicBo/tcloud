@@ -27,6 +27,14 @@ const Lgt = (props) => (
         }
     </Bundle>
 );
+// 新品开发
+const Newp = (props) => (
+    <Bundle load={() => import('../pages/newp')}>
+        {
+            (Newp) => Newp ? <Newp {...props} /> : <div className="loading"><Spin size="large" /></div>
+        }
+    </Bundle>
+);
 // 应用中心
 const App = (props) => (
     <Bundle load={() => import('../pages/app')}>
@@ -42,6 +50,7 @@ const RootRouter = (props) => {
             <Route path="/" exact render={() => <Home />} />
             <Route path="/oms" render={() => <Oms />} />
             <Route path="/logistics" render={() => <Lgt />} />
+            <Route path="/newp" render={() => <Newp />} />
             <Route path="/app" render={() => <App />} />
         </Switch>
     )

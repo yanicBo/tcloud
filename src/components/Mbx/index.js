@@ -4,7 +4,10 @@ import { Breadcrumb, Icon } from 'antd';
 import { breadcrumbNameMap } from './map';
 
 class Mbx extends Component {
-
+    componentWillMount(){
+        const pathname = location.pathname;
+        document.title = breadcrumbNameMap[pathname];
+    }
     render() {
         const pathname = location.pathname;
         const pathSnippets = pathname.split('/').filter(i => i);
@@ -17,6 +20,7 @@ class Mbx extends Component {
                     {
                         pathSnippets.map((item, index) => {
                             const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
+                            document.title = breadcrumbNameMap[url];
                             return (
                                 <Breadcrumb.Item key={url}>
                                     <Link to={url}>

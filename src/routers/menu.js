@@ -15,6 +15,11 @@ export const menuMain = [
         "id": "3"
     },
     {
+        "name": "新品开发",
+        "router": "newp",
+        "id": "31"
+    },
+    {
         "name": "应用中心",
         "router": "app",
         "id": "4"
