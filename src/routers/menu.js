@@ -5,7 +5,12 @@ export const menuMain = [
         "id": "1"
     },
     {
-        "name": "订单",
+        "name": "开发",
+        "router": "newp",
+        "id": "31"
+    },
+    {
+        "name": "销售",
         "router": "oms",
         "id": "2"
     },
@@ -13,11 +18,6 @@ export const menuMain = [
         "name": "物流",
         "router": "logistics/customs/list",
         "id": "3"
-    },
-    {
-        "name": "新品开发",
-        "router": "newp",
-        "id": "31"
     },
     {
         "name": "应用中心",

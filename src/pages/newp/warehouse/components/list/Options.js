@@ -207,7 +207,10 @@ class Options extends Component {
 
         return (
             <div>
-                {optionsSelect()}
+                <div className="options-style">
+                    <Link to="/" className="border-left">编辑</Link>
+                    <Link to="/">启用</Link>
+                </div>
             </div>
         );
     }

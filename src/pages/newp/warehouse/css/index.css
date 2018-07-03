@@ -1,0 +1,18 @@
+.newp .option{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* 操作列 */
+.newp .options-style{
+    overflow: hidden;
+    width: 84px;
+    margin: 0px auto;
+}
+.newp .options-style a{
+    padding: 0px 7px;
+    display: inline;
+}
+.newp .options-style a.border-left{
+    border-right: 1px #4d7bfe solid; 
+}

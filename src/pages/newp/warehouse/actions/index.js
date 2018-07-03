@@ -1,6 +1,7 @@
 import { req } from '../../../../utils';
 import { page } from '../../../../configs';
 import { paginationAction } from '../../../../reduxs/pagination';
+require('../../mock/list');
 
 
 /* 列表 */
@@ -11,10 +12,10 @@ export const list_action = value => ({
 })
 export const list_fetch = ({ name, value }) => (dispatch) => {
     return req.http('customs/list', value).then((data) => {
-        dispatch(list_action({ [name]: data.data, }));
+        dispatch(list_action({ [name]: data.data.data, }));
         dispatch(paginationAction({
             current: value.pageNumber || page.defaultCurrent,
-            total: data.total,
+            total: data.data.total,
             pageSize: value.pageData || page.defaultPageSize
         }))
     });
