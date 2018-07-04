@@ -1,7 +1,7 @@
 const Mock = require('mockjs');
 
 // 登录模拟接口
-Mock.mock('/api/customs/list', {
+Mock.mock('/api/newp/list', {
     "data": {
         "data|1-20": [
             {
