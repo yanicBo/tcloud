@@ -5,14 +5,19 @@
 
 /* 操作列 */
 .newp .options-style{
+    
+}
+.newp .options-style .inline-block{
+    padding: 0 5px;
+    height: 14px;
+    line-height: 14px;
     overflow: hidden;
-    width: 84px;
-    margin: 0px auto;
 }
-.newp .options-style a{
-    padding: 0px 7px;
-    display: inline;
-}
-.newp .options-style a.border-left{
+.newp .options-style .inline-block:first-child{
     border-right: 1px #4d7bfe solid; 
+}
+
+/* 弹框表单 */
+.newp-w-modal .ant-form-item{
+    margin-bottom: 5px;
 }

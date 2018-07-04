@@ -48,7 +48,16 @@ class List extends Component {
                 title: '状态',
                 dataIndex: 'state',
                 key: 'state',
-                align: 'center'
+                align: 'center',
+                render: (text, record) => {
+                    return (
+                        <div>
+                            {
+                                text===1 ?  '启用': '禁用'
+                            }
+                        </div>
+                    )
+                }
             }, {
                 title: '新增信息',
                 dataIndex: 'createInfo',
@@ -73,7 +82,7 @@ class List extends Component {
                 width: 120,
                 render: (text, record) => {
                     return (
-                        <Options type={record.auditStatus} id={record.id} />
+                        <Options type={record.auditStatus} id={record.id} {...this.props}/>
                     )
                 }
             }

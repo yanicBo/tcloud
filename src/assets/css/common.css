@@ -257,6 +257,10 @@
     
 }
 
+/* 行显示 */
+.inline-block{
+    display: inline-block
+}
 
 
 

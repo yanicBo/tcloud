@@ -10,8 +10,9 @@ class Option extends Component {
                     <Modal 
                         btnName="新增仓库" 
                         title="新增仓库关系"
-                        html={(<Detail/>)}
-                        type="plus"
+                        component={(<Detail {...this.props}/>)}
+                        iconType="plus"
+                        btnType="button"
                     />
                 </div>
             </div>

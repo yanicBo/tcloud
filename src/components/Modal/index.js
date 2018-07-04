@@ -20,7 +20,7 @@ class App extends Component {
             visible: false
         });
     }
-    
+
     // 取消
     handleCancel = () => {
         this.setState({
@@ -28,27 +28,42 @@ class App extends Component {
         });
     }
 
+    // 判断按钮类型
+    btnType = (btnType, btnName, iconType) => {
+        if (btnType === "button") {
+            return (
+                <Button onClick={this.showModal}>
+                    <Icon type={iconType} style={{ fontSize: 16 }} />
+                    {btnName}
+                </Button>
+            )
+        } else if (btnType === "font") {
+            return (
+                <span className="btn-name" onClick={this.showModal}>
+                    {btnName}
+                </span>
+            )
+        } else {
+            return null;;
+        }
+    }
+
     render() {
         const { visible } = this.state;
-        const { btnName, html, title, type } = this.props;
+        const { btnName, component, title, iconType, btnType } = this.props;
         return (
-            <div className="">
-                <div className="tcloud-modal">
-                    <Button onClick={this.showModal}>
-                        <Icon type={ type } style={{ fontSize: 16 }} />
-                        { btnName }
-                    </Button>
-                    <Modal 
-                        title={ title }
-                        visible={ visible }
-                        onOk={ this.handleOk }
-                        onCancel={ this.handleCancel }
-                    >
-                        <div>
-                            {html}
-                        </div>
-                    </Modal>
-                </div>
+            <div className="tcloud-modal">
+                {this.btnType(btnType, btnName, iconType)}
+                <Modal
+                    title={title}
+                    visible={visible}
+                    onOk={this.handleOk}
+                    onCancel={this.handleCancel}
+                >
+                    <div>
+                        {component}
+                    </div>
+                </Modal>
             </div>
         );
     }

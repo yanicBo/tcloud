@@ -1,4 +1,4 @@
-// 报关单状态
+// 启用禁用
 export const status = [
     {
         id: 0,

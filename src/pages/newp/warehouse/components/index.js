@@ -56,7 +56,7 @@ class App extends Component {
             <div className="newp">
                 <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
-                    <Option />
+                    <Option {...this.props}/>
                     <List {...this.props} listFetch={this.listFetch}/>
                 </div>
             </div>
