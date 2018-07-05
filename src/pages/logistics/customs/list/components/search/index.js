@@ -38,7 +38,7 @@ class Search extends Component {
     // 全局搜索
     onSubmit = (event) => {
         event.preventDefault();
-        this.props.customsListFetch();
+        this.props.listFetch();
     }
 
     render() {

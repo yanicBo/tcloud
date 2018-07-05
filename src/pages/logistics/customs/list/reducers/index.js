@@ -1,15 +1,15 @@
 import { combineReducers } from 'redux';
-import { customs_list } from '../actions';
+import { list } from '../actions';
 import { paginationReducer } from '../../../../../reduxs/pagination';
 
 // 列表
-const customs_list_reducer = (
+const list_reducer = (
     state = {
         data: [],
         loading: true,
     }, action) => {
     switch (action.type) {
-        case customs_list:
+        case list:
             return {
                 ...state,
                 ...action.payload,
@@ -20,7 +20,7 @@ const customs_list_reducer = (
 };
 
 const rootReducer = combineReducers({
-    customs_list_reducer,
+    list_reducer,
     paginationReducer
 });
 

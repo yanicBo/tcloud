@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Pagination, Row, Col } from 'antd';
 
-import Options from './Options';
+import Options from './options';
 import { page } from '../../../../../configs';
 import { timestampFromat } from '../../../../../utils';
 
@@ -69,7 +69,7 @@ class List extends Component {
                                 <Col span={24}>新增人：{text.creator}</Col>
                             </Row>
                             <Row gutter={24}> 
-                                <Col span={24}>新增时间：{text.createTime}</Col>
+                                <Col span={24}>新增时间：{timestampFromat(text.createTime, 'yyyy-mm-dd hh:MM:ss')}</Col>
                             </Row>
                         </div>
                     )
@@ -82,7 +82,7 @@ class List extends Component {
                 width: 120,
                 render: (text, record) => {
                     return (
-                        <Options type={record.auditStatus} id={record.id} {...this.props}/>
+                        <Options item={record}/>
                     )
                 }
             }

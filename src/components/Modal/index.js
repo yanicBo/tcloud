@@ -55,6 +55,7 @@ class App extends Component {
             <div className="tcloud-modal">
                 {this.btnType(btnType, btnName, iconType)}
                 <Modal
+                    maskClosable={false}
                     title={title}
                     visible={visible}
                     onOk={this.handleOk}

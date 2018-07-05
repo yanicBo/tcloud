@@ -3,18 +3,15 @@ import { Popconfirm } from 'antd';
 import './index.css';
 
 class App extends Component {
-    onConfirm = (e) => {
-        console.log(e)
-    };
 
     render() {
-        const {text, btnName} = this.props;
+        const {text, btnName, onConfirm} = this.props;
         return (
             <div className="tcloud-popconfirm">
                 <Popconfirm 
                     placement="topRight" 
                     title={text} 
-                    onConfirm={this.onConfirm} 
+                    onConfirm={onConfirm} 
                     okText="确定" 
                     cancelText="取消"
                 >

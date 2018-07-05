@@ -23,7 +23,7 @@ class App extends Component {
     }
 
     // 请求列表
-    customsListFetch = (pageNumber, pageData ) => {
+    listFetch = (pageNumber, pageData ) => {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 const filter = filterRequest(values)
@@ -33,7 +33,7 @@ class App extends Component {
                 this.setState({
                     tagValue: filters
                 })
-                this.props.customs_list_fetch({ name: 'data', value: filter });
+                this.props.list_fetch({ name: 'data', value: filter });
             }
         });
     }
@@ -54,10 +54,10 @@ class App extends Component {
     render() {
         return (
             <div className="logistics">
-                <Search {...this.props} customsListFetch={this.customsListFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
+                <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
                     <Option />
-                    <List {...this.props} customsListFetch={this.customsListFetch}/>
+                    <List {...this.props} listFetch={this.listFetch}/>
                 </div>
             </div>
         );

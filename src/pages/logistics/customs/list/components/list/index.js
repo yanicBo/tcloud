@@ -23,7 +23,7 @@ class List extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dataSource: this.props.customs_list_reducer.data,
+            dataSource: this.props.list_reducer.data,
         };
         this.columns = [
             {
@@ -150,7 +150,7 @@ class List extends Component {
     }
 
     componentDidMount() {
-        this.props.customsListFetch();
+        this.props.listFetch();
     };
 
     // 修改报关单号
@@ -166,10 +166,10 @@ class List extends Component {
     }
 
     render() {
-        const { data } = this.props.customs_list_reducer;
+        const { data } = this.props.list_reducer;
         const columns = this.columns;
         const { total, current, pageSize } = this.props.paginationReducer;
-        const { customsListFetch } = this.props;
+        const { listFetch } = this.props;
         return (
             <div>
                 <div className="table">
@@ -191,8 +191,8 @@ class List extends Component {
                         showQuickJumper                             // 是否可以快速跳转至某页
                         total={total}                             // 数据总数
                         pageSize={pageSize}                       // 每页条数
-                        onChange={customsListFetch}                // 页码改变的回调，参数是改变后的页码及每页条数
-                        onShowSizeChange={customsListFetch}        // pageSize 变化的回调
+                        onChange={listFetch}                // 页码改变的回调，参数是改变后的页码及每页条数
+                        onShowSizeChange={listFetch}        // pageSize 变化的回调
                         size="small"
                     />
                 </div>

@@ -21,7 +21,7 @@ class DefaultSearch extends Component {
         this.props.form.setFieldsValue({
             [name]: param
         })
-        this.props.customsListFetch()
+        this.props.listFetch()
     }
 
     render() {

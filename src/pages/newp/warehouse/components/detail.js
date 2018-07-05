@@ -1,18 +1,19 @@
 import React, { Component } from 'react';
-import { Form, Input, Select, Radio } from 'antd';
+import { Form, Input, Select } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
-const RadioGroup = Radio.Group;
 
-import { nature, types } from '../../data';
+import { nature, types, enable } from '../../data';
 
-class App extends Component {
+class Detail extends Component {
     formItemLayout = {
         labelCol: { span: 6 },
         wrapperCol: { span: 14 },
     };
+
     render() {
         const { getFieldDecorator } = this.props.form;
+
         return (
             <div className="newp-w-modal">
                 <Form onSubmit={this.handleSubmit}>
@@ -124,13 +125,16 @@ class App extends Component {
                     >
                         {getFieldDecorator('state', {
                             rules: [{
-                                required: true, message: '请输入地址.',
+                                required: true, message: '请选择启用状态.',
                             }],
                         })(
-                            <RadioGroup onChange={this.onChange} value={1}>
-                                <Radio value={1}>启用</Radio>
-                                <Radio value={2}>禁用</Radio>
-                            </RadioGroup>
+                            <Select placeholder="请选择">
+                                {
+                                    enable.map((item, index) => (
+                                        <Option value={item.id} key={index}>{item.name}</Option>
+                                    ))
+                                }
+                            </Select>
                         )}
                     </FormItem>
                 </Form>
@@ -139,4 +143,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default Form.create()(Detail);

@@ -3,7 +3,6 @@ import { Form } from 'antd';
 
 import DefaultSearch from './DefaultSearch';
 import TextSearch from './TextSearch';
-import BtnSearch from './BtnSearch';
 
 class Search extends Component {
     // 全局搜索
