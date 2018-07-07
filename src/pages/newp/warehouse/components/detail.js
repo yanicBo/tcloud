@@ -16,7 +16,7 @@ class Detail extends Component {
 
         return (
             <div className="newp-w-modal">
-                <Form onSubmit={this.handleSubmit}>
+                <Form>
                     <FormItem
                         {...this.formItemLayout}
                         label="仓库编码"
@@ -81,11 +81,7 @@ class Detail extends Component {
                         {...this.formItemLayout}
                         label="国家"
                     >
-                        {getFieldDecorator('country', {
-                            rules: [
-                                { required: true, message: '请选择国家' },
-                            ],
-                        })(
+                        {getFieldDecorator('country')(
                             <Select showSearch placeholder="请选择">
                                 {
                                     types.map((item, index) => (
@@ -99,11 +95,7 @@ class Detail extends Component {
                         {...this.formItemLayout}
                         label="负责人"
                     >
-                        {getFieldDecorator('director', {
-                            rules: [{
-                                required: true, message: '请输入负责人.',
-                            }],
-                        })(
+                        {getFieldDecorator('director')(
                             <Input />
                         )}
                     </FormItem>
@@ -111,11 +103,7 @@ class Detail extends Component {
                         {...this.formItemLayout}
                         label="地址"
                     >
-                        {getFieldDecorator('address', {
-                            rules: [{
-                                required: true, message: '请输入地址.',
-                            }],
-                        })(
+                        {getFieldDecorator('address')(
                             <Input />
                         )}
                     </FormItem>

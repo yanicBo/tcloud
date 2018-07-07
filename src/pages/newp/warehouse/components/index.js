@@ -15,10 +15,7 @@ class App extends Component {
 
     state = {
         tagValue: {
-            declarationType: [0],
-            companyId: [0],
-            logisticsStatus: [0],
-            depotType: [0]
+            state: [0]
         }
     }
 
@@ -38,23 +35,12 @@ class App extends Component {
         });
     }
 
-    // 重置
-    onReset = () => {
-        this.setState({
-            tagValue: {
-                declarationType: [0],
-                companyId: [0],
-                logisticsStatus: [0],
-                depotType: [0],
-            }
-        })
-        this.props.form.resetFields();
-    }
+    
 
     render() {
         return (
             <div className="newp">
-                <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
+                <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
                     <Option {...this.props}/>
                     <List {...this.props} listFetch={this.listFetch}/>

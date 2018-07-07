@@ -22,13 +22,13 @@ class DefaultSearch extends Component {
             <div className="default-search">
                 <StandardFormRow title="状态：">
                     <FormItem>
-                        {getFieldDecorator('declarationType')(
+                        {getFieldDecorator('state')(
                             <TagSelect
                                 isMulti={false}
                                 onChange={this.handleFormSubmit}
-                                values={tagValue.declarationType}
+                                values={tagValue.state}
                                 datas={status}
-                                name="declarationType"
+                                name="state"
                             />
                         )}
                     </FormItem>
