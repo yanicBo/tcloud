@@ -5,7 +5,7 @@ const { Content } = Layout;
 import Side from '../layout/side';
 import Mbx from '../../components/Mbx';
 import { menu } from "./routers/menu";
-import Router from './routers'
+import Router from './routers';
 
 class App extends Component {
     render() {

@@ -42,14 +42,15 @@ class Search extends Component {
     }
 
     render() {
-        const textSearch = this.state.isSearch ?
+        const { isSearch, isHightSearch } = this.state;
+        const textSearch = isSearch ?
             <TextSearch {...this.props} />
             : null;
 
-        const heightSearch = this.state.isHightSearch ? (
+        const heightSearch = isHightSearch ? (
             <HightSearch {...this.props} />
         ) : null;
-        const btnSearch = this.state.isSearch ? (
+        const btnSearch = isSearch ? (
             <BtnSearch {...this.props} onChangeHightSearch={this.onChangeHightSearch} isHightSearch={this.state.isHightSearch} />
         ) : null;
 
