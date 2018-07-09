@@ -1,0 +1,8 @@
+.tcloud-editable .editable-cell{
+    position: relative;
+}
+.tcloud-editable .anticon-edit{
+    position: absolute;
+    top: 2px;
+    right: 0px;
+}

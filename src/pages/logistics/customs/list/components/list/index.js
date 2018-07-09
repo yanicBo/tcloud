@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Table, Pagination } from 'antd';
+import { Table, Pagination, message } from 'antd';
 
 import Options from './Options';
-import EditableCell from './EditableCell';
-
+import EditableCell from '../../../../../../components/EditableCell';
 import { page } from '../../../../../../configs';
-import { timestampFromat } from '../../../../../../utils';
+import { timestampFromat, req } from '../../../../../../utils';
+require('../../../../mock/editNumber');
 
 const rowSelection = {
     onChange: (selectedRowKeys, selectedRows) => {
@@ -122,7 +122,7 @@ class List extends Component {
                 render: (text, record) => (
                     <EditableCell
                         value={text}
-                        onChange={this.onCellChange(record.key, 'name')}
+                        onCellChange={() => this.onCellChange(record.id, 'customsNumber')}
                     />
                 ),
             }, {
@@ -154,15 +154,19 @@ class List extends Component {
     };
 
     // 修改报关单号
-    onCellChange = (key, dataIndex) => {
-        return (value) => {
-            const dataSource = [...this.state.dataSource];
-            const target = dataSource.find(item => item.key === key);
-            if (target) {
-                target[dataIndex] = value;
-                this.setState({ dataSource });
-            }
-        };
+    onCellChange = (id, name) => {
+        req.http('customs/editNumber', {id: id}).then(data => {
+            message.success('操作成功.');
+            return (value) => {
+                const dataSource = [...this.state.dataSource];
+                const target = dataSource.find(item => item.id === id);
+                if (target) {
+                    target[name] = value;
+                    this.setState({ dataSource });
+                }
+            };
+        })
+        
     }
 
     render() {
