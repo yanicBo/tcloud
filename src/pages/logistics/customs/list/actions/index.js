@@ -11,7 +11,7 @@ export const list_action = value => ({
     payload: value
 })
 export const list_fetch = ({ name, value }) => (dispatch) => {
-    return req.http('customs/list', value).then((data) => {
+    return req.http('/api/customs/list', value).then((data) => {
         dispatch(list_action({ [name]: data.data, }));
         dispatch(paginationAction({
             current: value.pageNumber || page.defaultCurrent,

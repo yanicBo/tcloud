@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios'
 
 import { Form, Icon, Input, Button, Checkbox, message } from 'antd';
 
 import { req, setCookie } from '../../utils';
-require('../../mock/login');
+import { config, paramType, path } from '../../configs';
 
 const FormItem = Form.Item;
 
 class Login extends Component {
-    handleSubmit(e){
-        e.preventDefault();
+    handleSubmit = (event) =>{
+        event.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                req.http('user/login', values).then(data => {
+                req.http(path.urc + 'login', values, paramType.map).then(data => {
                     message.success('登录成功.');
-                    setCookie('login_ticket', data.ticket);
+                    setCookie('login_ticket', data.data.ticket);
+                    setCookie('username', data.data.userName);
                     location.href = location.href;
-                })
+                }) 
             }
         });
     }
@@ -26,7 +28,7 @@ class Login extends Component {
         const { getFieldDecorator } = this.props.form;
         return (
             <div className='login'>
-                <Form onSubmit={(e) => {this.handleSubmit(e)}} className="login-form">
+                <Form onSubmit={this.handleSubmit} className="login-form">
                     <FormItem>
                         {getFieldDecorator('userName', {
                             rules: [{required: true, message: '请输入用户名'}],
@@ -35,7 +37,7 @@ class Login extends Component {
                         )}
                     </FormItem>
                     <FormItem>
-                        {getFieldDecorator('password', {
+                        {getFieldDecorator('pwd', {
                             rules: [{required: true, message: '请输入密码'}],
                         })(
                             <Input prefix={<Icon type="lock"/>} type="password" placeholder="请输入您的密码" />

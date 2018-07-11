@@ -46,5 +46,11 @@ export const breadcrumbNameMap ={
     '/oms/setting/conversion': '订单转换',
     '/oms/setting/channel': '渠道标记',
     '/oms/setting/deliver': '指定仓发货',
-    '/oms/setting/collect': '收货人信息拦截',   
+    '/oms/setting/collect': '收货人信息拦截',  
+    
+    // 应用中心
+    '/app': '应用中心',
+
+    '/app/urc': '用户中心',
+    '/app/urc/organize': '组织架构',
 }

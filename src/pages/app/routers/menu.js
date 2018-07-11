@@ -1,18 +1,5 @@
 export const menu = [
     {
-        "name": "平台授权",
-        "router": "app/authorization",
-        "icon": "contacts",
-        "id": "27",
-        "sub": [
-            {
-                "name": "速卖通授权",
-                "router": "sys/authorization/smt",
-                "id": "28"
-            }
-        ]
-    },
-    {
         "name": "用户中心",
         "router": "app/urc",
         "icon": "contacts",

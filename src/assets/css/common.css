@@ -262,6 +262,11 @@
     display: inline-block
 }
 
+/* 弹性布局 */
+.display-flex{
+    display: flex;
+}
+
 
 
 

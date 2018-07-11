@@ -12,19 +12,8 @@ const webpackConfigDev = {
         port: 8081,
         proxy: {
             // 登录模块
-            '/api/user': {
-                target: 'http://192.168.201.212:8080',
-                changeOrigin: true
-            },
-            // 订单管理系统模块
-            '/api/oms': {
-                target: 'http://192.168.201.212:8080',
-                changeOrigin: true
-            },
-            // 系统管理模块
-            '/api/grab': {
-                target: 'http://192.168.201.213:8081',
-                changeOrigin: true
+            '/urc/motan/service/api/IUrcService/': {
+                target: 'http://192.168.201.211:8000'
             }
         }
     }

@@ -1,0 +1,45 @@
+.urc .organize-left{
+    width: 280px;
+}
+.urc .organize-left .organize-left-title{
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 18px;
+    padding: 10px 0px 15px 0px;
+}
+.urc .organize-left .organize-left-title span{
+    display: block;
+    float: left;
+    width: 4px;
+    height: 18px;
+    background: #4D7BFE;
+    border-radius: 2px;
+    margin-right: 10px; 
+}
+.urc .organize-left .organize-left-content{
+    border: 1px #eee solid;
+}
+.urc .organize-left .organize-left-content .title{
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    background: #F2F2F5;
+}
+.urc .organize-left .organize-left-content .content{
+    overflow: auto;
+}
+.urc .ant-tree li span.ant-tree-switcher.ant-tree-switcher_open:after{
+    content: '\E61D';
+    font-size: 18px;
+}
+.urc .ant-tree li span.ant-tree-switcher.ant-tree-switcher_close:after{
+    content: '\E61D';
+    font-size: 18px;
+}
+.urc .anticon-folder, .urc .anticon-folder-open{
+    color: #4D7BFE
+}
+.urc .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected{
+    background: #fff;
+    color: #4D7BFE;
+}

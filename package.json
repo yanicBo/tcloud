@@ -5,10 +5,10 @@
   "description": "yks订单管理",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --config webpack/webpack.config.dev.js --progress",
-    "test": "webpack-dev-server --config webpack/webpack.config.test.js --progress",
+    "dev": "cross-env NODE_ENV=dev webpack-dev-server --config=webpack/webpack.config.dev.js --progress --open",
+    "test": "cross-env NODE_ENV=test webpack-dev-server --config=webpack/webpack.config.test.js --progress --open",
     "start": "node app.js",
-    "build": "webpack --config webpack/webpack.config.dev.js --progress"
+    "build": "webpack --config webpack/webpack.config.prod.js --progress"
   },
   "author": "Yanic",
   "license": "ISC",
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.6",
+    "cross-env": "^5.2.0",
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "html-loader": "^0.5.5",

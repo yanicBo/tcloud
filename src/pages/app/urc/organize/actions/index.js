@@ -1,21 +1,21 @@
-import { req } from '../../../../utils';
-import { page } from '../../../../configs';
-import { paginationAction } from '../../../../reduxs/pagination';
-require('../../mock/list');
+import { req } from '../../../../../utils';
+import { page } from '../../../../../configs';
+import { paginationAction } from '../../../../../reduxs/pagination';
 
 
-/* 列表 */
+
+/* 报关单列表 */
 export const list = 'list';
 export const list_action = value => ({
     type: list,
     payload: value
 })
 export const list_fetch = ({ name, value }) => (dispatch) => {
-    return req.http('/api/newp/list', value).then((data) => {
-        dispatch(list_action({ [name]: data.data.data, }));
+    return req.http('customs/list', value).then((data) => {
+        dispatch(list_action({ [name]: data.data, }));
         dispatch(paginationAction({
             current: value.pageNumber || page.defaultCurrent,
-            total: data.data.total,
+            total: data.total,
             pageSize: value.pageData || page.defaultPageSize
         }))
     });

@@ -4,19 +4,20 @@ import { Spin } from 'antd';
 import Bundle from '../../../components/bundle';
 
 // 报关单
-const Authorization = (props) => (
-    <Bundle load={() => import('../authorization')}>
+const Organize = (props) => (
+    <Bundle load={() => import('../urc/organize')}>
         {
-            (Authorization) => Authorization ? <Authorization {...props} /> : <div className="loading"><Spin size="large"/></div>
+            (Organize) => Organize ? <Organize {...props} /> : <div className="loading"><Spin size="large"/></div>
         }
     </Bundle>
 );
 
 const OmsRouter = () => {
     return (
-        <div>
-            <Route exact path="/app" render={() => <Authorization/> }/>
-            <Route path="/app/authorization/smt" render={() => <Authorization/> }/>
+        <div className="padding-md">
+            <Route exact path="/app" render={() => <Organize/> }/>
+            <Route exact path="/app/urc" render={() => <Organize/> }/>
+            <Route exact path="/app/urc/organize" render={() => <Organize/> }/>
         </div>
     )
 };
