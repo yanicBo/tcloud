@@ -34,8 +34,9 @@ class Top extends Component {
             content: '退出将返回登录页面.',
             onOk() {
                 req.http(path.urc+'logout', {}).then(() => {
-                    setCookie('login_ticket', '', -1);
+                    setCookie('ticket', '', -1);
                     setCookie('username', '', -1);
+                    setCookie('funcVersion', '', -1);
                     location.href = '/';
                 })
             },

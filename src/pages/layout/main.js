@@ -16,14 +16,14 @@ import './layout.css';
 
 class MainRouter extends Component {
 
-    componentWillMount() {
+    componentDidMount() {
         this.getMenuData();
     }
 
     getMenuData = () => {
         req.http(path.urc + 'getAllFuncPermit', {}).then(data => {
             setCookie('funcVersion', data.data.funcVersion);
-        }) 
+        })
     }
 
     render() {

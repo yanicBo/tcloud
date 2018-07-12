@@ -34,8 +34,9 @@ axios.interceptors.request.use(config => {
 // 响应拦截器即异常处理
 axios.interceptors.response.use(res => {
     if (res.data.state == '100002') {
-        setCookie('ticket', '', -1)
-        setCookie('username', '', -1)
+        setCookie('ticket', '', -1);
+        setCookie('username', '', -1);
+        setCookie('funcVersion', '', -1);
         location.href = '/'
     }
     return res
@@ -132,8 +133,8 @@ export const req = {
         }else{
             values.ticket = session('ticket');
             values.operator = session('username');
-            values.moduleUrl = location.pathname;
-            values.funcVersion = getCookie('funcVersion');
+            values.funcVersion = session('funcVersion');
+            values.moduleUrl = location.pathname;  
         }
         return new Promise((resolve) => {
             axios(params).then(res => {
