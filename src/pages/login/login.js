@@ -16,7 +16,7 @@ class Login extends Component {
             if (!err) {
                 req.http(path.urc + 'login', values, paramType.map).then(data => {
                     message.success('登录成功.');
-                    setCookie('login_ticket', data.data.ticket);
+                    setCookie('ticket', data.data.ticket);
                     setCookie('username', data.data.userName);
                     location.href = location.href;
                 }) 

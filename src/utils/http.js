@@ -7,8 +7,8 @@
 
 import axios from 'axios';
 import { message } from 'antd';
-import { ticket } from "./tools.js";
-import { setCookie } from "./cookie.js";
+import { session } from "./tools.js";
+import { setCookie, getCookie } from "./cookie.js";
 import { debug } from "./debug.js";
 
 // 网关环境 dev:开发环境，test：测试环境， pre:预发布环境，pro:生产环境
@@ -22,13 +22,6 @@ axios.defaults.headers.common['prefix'] = 'com.yks';  // 服务前缀（默认co
 axios.defaults.headers.common['version'] = '1.0'  // 接口版本
 axios.defaults.timeout = 30000;
 
-// 将ticket载入headers
-let login_ticket = ticket();
-if (login_ticket) {
-    axios.defaults.headers.common['ticket'] = login_ticket;
-}
-
-
 // 请求拦截器
 axios.interceptors.request.use(config => {
     return config
@@ -36,10 +29,12 @@ axios.interceptors.request.use(config => {
     return Promise.reject(error)
 })
 
+
+
 // 响应拦截器即异常处理
 axios.interceptors.response.use(res => {
     if (res.data.state == '100002') {
-        setCookie('login_ticket', '', -1)
+        setCookie('ticket', '', -1)
         setCookie('username', '', -1)
         location.href = '/'
     }
@@ -106,25 +101,42 @@ axios.interceptors.response.use(res => {
 })
 
 export const req = {
+    /*
+    * ajax 请求封装
+    * 
+    * @param <String> url 接口地址，例：/urc/motan/service/api/IUrcService/login
+    * @param <Object> values 请求参数对象
+    * @param <Object> paramType 网关环境，默认{ 'Content-Type': 'application/json;charset=UTF-8', 'paramType': '1' }
+    * @param <String> type 传输方式，默认post
+    * 
+    */
     http(url, values, paramType, type) {
-        return new Promise((resolve) => {
-            axios({
-                method: type || 'post',
-                url: url,
-                data: values,
-                headers: paramType || { 'Content-Type': 'application/json;charset=UTF-8', 'paramType': '1' },
-                transformRequest: [function (data) {
-                    if(paramType){
-                        if (paramType.paramType === '2') {
-                            let res = ''
-                            for (let key in data) {
-                                res += encodeURIComponent(key) + '=' + encodeURIComponent(data[key]) + '&'
-                            }
-                            return res
-                        }
+
+        var params = {
+            method: type || 'post',
+            url: url,
+            data: values,
+            headers: paramType || { 'Content-Type': 'application/json', 'paramType': '1' }
+        }
+
+        if(paramType){
+            if (paramType.paramType === '2') {
+                params.transformRequest = [function(data){
+                    let res = ''
+                    for (let key in data) {
+                        res += encodeURIComponent(key) + '=' + encodeURIComponent(data[key]) + '&'
                     }
+                    return res
                 }]
-            }).then(res => {
+            }
+        }else{
+            values.ticket = session('ticket');
+            values.operator = session('username');
+            values.moduleUrl = location.pathname;
+            values.funcVersion = getCookie('funcVersion');
+        }
+        return new Promise((resolve) => {
+            axios(params).then(res => {
                 if (res) {
                     if (res.data.state === '000001') {
                         debug('ajax[' + url + '] response result:', {

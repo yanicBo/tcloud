@@ -4,15 +4,15 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './assets/css/common.css';
 
-import { ticket } from "./utils/tools";
+import { session } from "./utils/tools";
 
 import MainRouter from './pages/layout/main';
 import LoginRouter from './pages/layout/index';
 
 class App extends Component {
     render() {
-        var login_ticket = ticket();
-        var isTicket = login_ticket ? true : false;
+        var ticket = session('ticket');
+        var isTicket = ticket ? true : false;
         var LayoutRouter = isTicket ? <MainRouter /> : <LoginRouter/>;
         return (
             <Router>

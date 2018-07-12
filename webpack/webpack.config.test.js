@@ -11,8 +11,11 @@ const webpackConfigDev = {
         historyApiFallback: true,
         port: 8082,
         proxy: {
-            // 登录模块
             '/urc/motan/service/api/IUrcService/': {
+                target: 'http://10.90.1.204:8000',
+                changeOrigin: true
+            },
+            '/customs/api/': {
                 target: 'http://10.90.1.204:8000',
                 changeOrigin: true
             }

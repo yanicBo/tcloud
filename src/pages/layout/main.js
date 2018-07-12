@@ -8,10 +8,23 @@ import Header from "./header";
 import { menuMain } from "../../routers/menu";
 import Router from "../../routers/index";
 
+import { req, setCookie } from '../../utils';
+import { path } from '../../configs';
+
 import './layout.css';
 
 
 class MainRouter extends Component {
+
+    componentWillMount() {
+        this.getMenuData();
+    }
+
+    getMenuData = () => {
+        req.http(path.urc + 'getAllFuncPermit', {}).then(data => {
+            setCookie('funcVersion', data.data.funcVersion);
+        }) 
+    }
 
     render() {
         

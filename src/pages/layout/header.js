@@ -5,7 +5,7 @@ const { Header } = Layout;
 const confirm = Modal.confirm;
 
 import { req, setCookie } from '../../utils';
-require('../../mock/logout');
+import { path, paramType } from '../../configs';
 
 class Top extends Component {
     constructor(props){
@@ -33,9 +33,10 @@ class Top extends Component {
             title: '确定要退出登录?',
             content: '退出将返回登录页面.',
             onOk() {
-                req.http('user/logout', {}).then(() => {
-                    setCookie('login_ticket', '', -1)
-                    location.href = '/'
+                req.http(path.urc+'logout', {}).then(() => {
+                    setCookie('login_ticket', '', -1);
+                    setCookie('username', '', -1);
+                    location.href = '/';
                 })
             },
             onCancel() {

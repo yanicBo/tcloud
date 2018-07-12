@@ -1,12 +1,20 @@
 import { getCookie } from "./cookie.js";
 
 /**
- * 获取登录用户ticket
- *
+ * 获取登录用户session
+ * @param <Number> 获取cookie类型， ticket, username, funcVersion
  */
-export const ticket = () => {
+export const session = (type) => {
     let session = '';
-    session = getCookie('login_ticket');
+    if(type === 'ticket'){
+        session = getCookie('ticket');
+    }else if(type === 'username'){
+        session = getCookie('username');
+    }else if(type === 'funcVersion'){
+        session = getCookie('funcVersion');
+    }else{
+        session = null;
+    }
     return session
 }
 

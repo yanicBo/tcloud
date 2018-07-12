@@ -54,11 +54,7 @@ class List extends Component {
                             <div className="clear">
                                 <div className="title">物流计划单号：</div>
                                 <div className="content">
-                                    {
-                                        record.planNumber.map((item, index) => (
-                                            <span key={index}>{item}</span>
-                                        ))
-                                    }
+                                    {record.planNumber}
                                 </div>
                             </div>
                             <div className="clear">
@@ -155,7 +151,7 @@ class List extends Component {
 
     // 修改报关单号
     onCellChange = (id, name) => {
-        req.http('customs/editNumber', {id: id}).then(data => {
+        req.http('/api/customs/editNumber', {id: id}).then(data => {
             message.success('操作成功.');
             return (value) => {
                 const dataSource = [...this.state.dataSource];
@@ -166,7 +162,6 @@ class List extends Component {
                 }
             };
         })
-        
     }
 
     render() {
