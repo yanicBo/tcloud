@@ -13,11 +13,10 @@ import { debug } from "./debug.js";
 
 // 网关环境 dev:开发环境，test：测试环境， pre:预发布环境，pro:生产环境
 const NODE_ENV = process.env.NODE_ENV
-console.log(NODE_ENV);
 
 // axios.defaults.baseURL = config.urcPath;
 // axios.defaults.headers.post['Content-Type'] = 'application/json;charset=UTF-8';
-axios.defaults.headers.common['group'] = 'rpc-service-group-' + 'test';  
+axios.defaults.headers.common['group'] = 'rpc-service-group-' + 'test';
 axios.defaults.headers.common['prefix'] = 'com.yks';  // 服务前缀（默认com.yks）
 axios.defaults.headers.common['version'] = '1.0'  // 接口版本
 axios.defaults.timeout = 30000;
@@ -42,14 +41,16 @@ axios.interceptors.response.use(res => {
     return res
 }, err => {
     if (err) {
-        console.log(err);
         switch (err.response.status) {
             case 400:
                 message.error('错误请求.');
                 return false;
                 break;
             case 401:
-                message.error('未授权，请重新登录.');
+                // setCookie('ticket', '', -1);
+                // setCookie('username', '', -1);
+                // setCookie('funcVersion', '', -1);
+                location.href = '/timeout';
                 return false;
                 break;
             case 403:
@@ -120,9 +121,9 @@ export const req = {
             headers: paramType || { 'Content-Type': 'application/json', 'paramType': '1' }
         }
 
-        if(paramType){
+        if (paramType) {
             if (paramType.paramType === '2') {
-                params.transformRequest = [function(data){
+                params.transformRequest = [function (data) {
                     let res = ''
                     for (let key in data) {
                         res += encodeURIComponent(key) + '=' + encodeURIComponent(data[key]) + '&'
@@ -130,11 +131,11 @@ export const req = {
                     return res
                 }]
             }
-        }else{
+        } else {
             values.ticket = session('ticket');
             values.operator = session('username');
             values.funcVersion = session('funcVersion');
-            values.moduleUrl = location.pathname;  
+            values.moduleUrl = location.pathname;
         }
         return new Promise((resolve) => {
             axios(params).then(res => {

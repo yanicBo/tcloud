@@ -1,0 +1,53 @@
+.error-logo{
+    width: 310px;
+    margin: 0px auto;
+    overflow: hidden;
+    padding: 50px;
+}
+.error-logo .img{
+    float: left;
+    width: 60px;
+    height: 60px;
+    background: #fff url(../../assets/img/logo.png) no-repeat center;
+    margin-right: 15px;
+}
+.error-logo .title{
+    float: left;
+    font-size: 34px;
+    line-height: 60px;
+}
+.error-logo .title .color-green{
+    color: #51ee86;
+}
+.error-logo .title .color-blue{
+    color: #4d7bfe;
+}
+
+/* 登录超时 */
+.tcloud-timeout{
+    height: 100vh;
+    background: #fff;
+}
+.tcloud-timeout .error-main{
+    width: 766px;
+    height: 415px;
+    margin: 0px auto;
+    background: url('./img/error_background.png') no-repeat;
+}
+.tcloud-timeout .error-tips{
+    float: right;
+    width: 400px;
+
+}
+.tcloud-timeout .error-tips1{
+    font-size: 26px;
+    clear: both;
+
+}
+.tcloud-timeout .error-tips1 p{
+    margin-bottom: 10px;
+}
+.tcloud-timeout .error-tips2{
+    margin-top: 40px;
+    font-size: 18px;
+}

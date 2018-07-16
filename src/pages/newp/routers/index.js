@@ -15,9 +15,9 @@ const Warehouse = (props) => (
 const Router = () => {
     return (
         <div className="padding-md">
-            <Route exact path="/newp" breadcrumbName="" render={() => <Warehouse/> }/>
-            <Route exact path="/newp/basics" breadcrumbName="" render={() => <Warehouse/> }/>
-            <Route exact path="/newp/basics/warehouse" breadcrumbName="" render={() => <Warehouse/> }/>
+            <Route exact path="/tcloud/newp" breadcrumbName="" render={() => <Warehouse/> }/>
+            <Route exact path="/tcloud/newp/basics" breadcrumbName="" render={() => <Warehouse/> }/>
+            <Route exact path="/tcloud/newp/basics/warehouse" breadcrumbName="" render={() => <Warehouse/> }/>
         </div>
     )
 };

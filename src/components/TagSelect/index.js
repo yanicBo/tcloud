@@ -54,7 +54,7 @@ class TagSelect extends Component {
                     )
                 }
                 {expandable && (
-                    <a className={styles.trigger} onClick={this.handleExpand}>
+                    <a className="" onClick={this.handleExpand}>
                         {expand ? '收起' : '展开'} <Icon type={expand ? 'up' : 'down'} />
                     </a>
                 )}

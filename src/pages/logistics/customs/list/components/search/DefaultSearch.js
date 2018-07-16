@@ -39,6 +39,7 @@ class DefaultSearch extends Component {
                                 values={tagValue.declarationType}
                                 datas={status_customs}
                                 name="declarationType"
+                                expandable={true}
                             />
                         )}
                     </FormItem>

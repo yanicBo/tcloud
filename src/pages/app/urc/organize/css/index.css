@@ -1,5 +1,6 @@
 .urc .organize-left{
     width: 280px;
+    height: 78vh;
 }
 .urc .organize-left .organize-left-title{
     font-size: 18px;
@@ -39,7 +40,17 @@
 .urc .anticon-folder, .urc .anticon-folder-open{
     color: #4D7BFE
 }
-.urc .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected{
+.urc .ant-tree li .ant-tree-node-content-wrapper.ant-tree-node-selected, 
+.urc .ant-tree li .ant-tree-node-content-wrapper-open{
     background: #fff;
     color: #4D7BFE;
+}
+.urc .text-search .standard-form-row{
+    overflow: hidden;
+}
+.urc .ant-form-item{
+    margin: 0px;
+}
+.urc form .ant-select{
+    width: auto;
 }
