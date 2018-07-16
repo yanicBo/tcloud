@@ -8,8 +8,10 @@
 import axios from 'axios';
 import { message } from 'antd';
 import { session } from "./tools.js";
-import { setCookie, getCookie } from "./cookie.js";
+import { setCookie } from "./cookie.js";
 import { debug } from "./debug.js";
+
+
 
 // 网关环境 dev:开发环境，test：测试环境， pre:预发布环境，pro:生产环境
 const NODE_ENV = process.env.NODE_ENV
@@ -47,10 +49,10 @@ axios.interceptors.response.use(res => {
                 return false;
                 break;
             case 401:
-                // setCookie('ticket', '', -1);
-                // setCookie('username', '', -1);
-                // setCookie('funcVersion', '', -1);
-                location.href = '/timeout';
+                setCookie('ticket', '', -1);
+                setCookie('username', '', -1);
+                setCookie('funcVersion', '', -1);
+                location.href = '/';
                 return false;
                 break;
             case 403:

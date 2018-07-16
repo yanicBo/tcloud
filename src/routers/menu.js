@@ -1,27 +1,27 @@
 export const menuMain = [
     {
         "name": "首页",
-        "router": "tcloud",
+        "router": "",
         "id": "1"
     },
     {
         "name": "开发",
-        "router": "tcloud/newp",
+        "router": "newp",
         "id": "31"
     },
     {
         "name": "销售",
-        "router": "tcloud/oms",
+        "router": "oms",
         "id": "2"
     },
     {
         "name": "物流",
-        "router": "tcloud/logistics/customs/list",
+        "router": "logistics/customs/list",
         "id": "3"
     },
     {
         "name": "应用中心",
-        "router": "tcloud/app",
+        "router": "app",
         "id": "4"
     }
 ]

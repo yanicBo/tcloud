@@ -24,10 +24,10 @@ const Make = (props) => (
 const Router = () => {
     return (
         <div className="padding-md">
-            <Route exact path="/tcloud/logistics" breadcrumbName="" render={() => <Customs/> }/>
-            <Route exact path="/tcloud/logistics/customs" render={() => <Customs/> }/>
-            <Route exact path="/tcloud/logistics/customs/list" render={() => <Customs/> }/>
-            <Route exact path="/tcloud/logistics/customs/list/make/:id" render={() => <Make/> }/>
+            <Route exact path="/logistics" breadcrumbName="" render={() => <Customs/> }/>
+            <Route exact path="/logistics/customs" render={() => <Customs/> }/>
+            <Route exact path="/logistics/customs/list" render={() => <Customs/> }/>
+            <Route exact path="/logistics/customs/list/make/:id" render={() => <Make/> }/>
         </div>
     )
 };

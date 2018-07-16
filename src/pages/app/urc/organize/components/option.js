@@ -10,17 +10,19 @@ class Option extends Component {
             </Menu>
         );
 
+        const { onSynData } = this.props;
+
         return (
             <div className="overflow-hidden margin-sm-bottom">
                 <div className="pull-left">
-                    <Dropdown overlay={menu}>
+                    <Dropdown overlay={ menu }>
                         <Button>
                             批量操作 <Icon type="down" />
                         </Button>
                     </Dropdown>
                 </div>
                 <div className="pull-right">
-                    <Button><Icon type="reload"/> 同步数据</Button>
+                    <Button onClick={ onSynData }><Icon type="reload"/> 同步数据</Button>
                 </div>
             </div>
         );

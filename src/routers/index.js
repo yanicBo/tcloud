@@ -47,11 +47,11 @@ const App = (props) => (
 const RootRouter = (props) => {
     return (
         <Switch>
-            <Route path="/tcloud" exact render={() => <Home />} />
-            <Route path="/tcloud/oms" render={() => <Oms />} />
-            <Route path="/tcloud/logistics" render={() => <Lgt />} />
-            <Route path="/tcloud/newp" render={() => <Newp />} />
-            <Route path="/tcloud/app" render={() => <App />} />
+            <Route path="/" exact render={() => <Home />} />
+            <Route path="/oms" render={() => <Oms />} />
+            <Route path="/logistics" render={() => <Lgt />} />
+            <Route path="/newp" render={() => <Newp />} />
+            <Route path="/app" render={() => <App />} />
         </Switch>
     )
 };

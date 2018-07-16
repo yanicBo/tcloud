@@ -24,8 +24,8 @@ const Smt = (props) => (
 const OmsRouter = () => {
     return (
         <div>
-            <Route exact path="、tcloud/oms" render={() => <Home/> }/>
-            <Route path="/tcloud/oms/platform/smt" render={() => <Smt/> }/>
+            <Route exact path="/oms" render={() => <Home/> }/>
+            <Route path="/oms/platform/smt" render={() => <Smt/> }/>
         </div>
     )
 };

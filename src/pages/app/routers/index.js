@@ -15,9 +15,9 @@ const Organize = (props) => (
 const OmsRouter = () => {
     return (
         <div className="padding-md">
-            <Route exact path="/tcloud/app" render={() => <Organize/> }/>
-            <Route exact path="/tcloud/app/urc" render={() => <Organize/> }/>
-            <Route exact path="/tcloud/app/urc/organize" render={() => <Organize/> }/>
+            <Route exact path="/app" render={() => <Organize/> }/>
+            <Route exact path="/app/urc" render={() => <Organize/> }/>
+            <Route exact path="/app/urc/organize" render={() => <Organize/> }/>
         </div>
     )
 };

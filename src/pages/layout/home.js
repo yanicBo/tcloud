@@ -8,12 +8,10 @@ import Main from '../layout/main';
 class Home extends Component {
     render() {
         return (
-            <div>
-                <Switch>
-                    <Route exact path="/timeout" render={() => <Timeout />} />
-                    <Route exact path="/tcloud" render={() => <Main />} />
-                </Switch>
-            </div>
+            <Switch>
+                <Route exact path="/timeout" render={() => <Timeout />} />
+                <Route exact path="/" render={() => <Main />} />  
+            </Switch>
         )
     }
 }

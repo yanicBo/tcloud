@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { Form } from 'antd';
+import { Form, Spin, message } from 'antd';
 
 import actions from '../actions';
 
@@ -31,7 +31,15 @@ class App extends Component {
         });
     }
 
+    // 同步数据
+    onSynData = () => {
+        return req.http(path.urc + 'syncDingOrgAndUser', {}).then((data) => {
+            message.success('成功同步数据.');
+        });
+    }
+
     render() {
+        const { loading } = this.props.list_reducer;
         return (
             <div className="urc">
                 <Form className="display-flex" onSubmit={this.handleSubmit}>
@@ -39,8 +47,10 @@ class App extends Component {
                     <div className="width-100">
                         <Search {...this.props}/>
                         <div className="breadcrumb padding-sm overflow-hidden margin-md-top margin-md-left">
-                            <Option {...this.props}/>
-                            <List {...this.props} listFetch={this.listFetch}/>
+                            <Spin spinning={loading} delay={500}>
+                                <Option {...this.props} onSynData={this.onSynData}/>
+                                <List {...this.props} listFetch={this.listFetch}/>
+                            </Spin>
                         </div>
                     </div>
                 </Form>

@@ -12,7 +12,7 @@ export const list_action = value => ({
 })
 export const list_fetch = ({ name, value }) => (dispatch) => {
     return req.http(path.urc + 'getUserByDingOrgId', value).then((data) => {
-        dispatch(list_action({ [name]: data.data.lst, }));
+        dispatch(list_action({ [name]: data.data.lst, loading: false}));
         dispatch(paginationAction({
             current: value.pageNumber || page.defaultCurrent,
             total: data.data.total,
