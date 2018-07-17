@@ -1,4 +1,4 @@
-import { getCookie } from "./cookie.js";
+import { getCookie, setCookie } from "./cookie.js";
 
 /**
  * 获取登录用户session
@@ -6,16 +6,26 @@ import { getCookie } from "./cookie.js";
  */
 export const session = (type) => {
     let session = '';
-    if(type === 'ticket'){
+    if (type === 'ticket') {
         session = getCookie('ticket');
-    }else if(type === 'username'){
+    } else if (type === 'username') {
         session = getCookie('username');
-    }else if(type === 'funcVersion'){
+    } else if (type === 'funcVersion') {
         session = getCookie('funcVersion');
-    }else{
+    } else {
         session = null;
     }
     return session
+}
+
+/**
+ * 删除登陆cookie信息,并且跳转到登录
+ */
+export const deleteSession = () => {
+    setCookie('ticket', '', -1);
+    setCookie('username', '', -1);
+    setCookie('funcVersion', '', -1);
+    location.href = '/'
 }
 
 /**
@@ -23,8 +33,8 @@ export const session = (type) => {
  * @param <Number> obj 响应的对象
  */
 export const addKey = (obj) => {
-    for(var key in obj){
-        obj[key].key = parseInt(key)+1;
+    for (var key in obj) {
+        obj[key].key = parseInt(key) + 1;
     }
     return obj
 }

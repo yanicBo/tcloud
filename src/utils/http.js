@@ -4,12 +4,13 @@
 * @Last Modified by:   Yanic
 * @Last Modified time: 2018-03-12 11:27:00
 */
-
+import React, { Component } from 'react';
 import axios from 'axios';
-import { message } from 'antd';
-import { session } from "./tools.js";
-import { setCookie } from "./cookie.js";
+import { message, Modal } from 'antd';
+import { session, deleteSession } from "./tools.js";
 import { debug } from "./debug.js";
+
+import Timeout from '../components/Timeout';
 
 
 
@@ -35,10 +36,7 @@ axios.interceptors.request.use(config => {
 // 响应拦截器即异常处理
 axios.interceptors.response.use(res => {
     if (res.data.state == '100002') {
-        setCookie('ticket', '', -1);
-        setCookie('username', '', -1);
-        setCookie('funcVersion', '', -1);
-        location.href = '/'
+        deleteSession();
     }
     return res
 }, err => {
@@ -49,10 +47,16 @@ axios.interceptors.response.use(res => {
                 return false;
                 break;
             case 401:
-                setCookie('ticket', '', -1);
-                setCookie('username', '', -1);
-                setCookie('funcVersion', '', -1);
-                location.href = '/';
+                Modal.warning({
+                    title: '对不起，你的登录时间已经超时',
+                    content: (
+                        <Timeout/>
+                    ),
+                    okText: "立即跳转登录",
+                    onOk() {
+                        deleteSession();
+                    },
+                });
                 return false;
                 break;
             case 403:
