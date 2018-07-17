@@ -29,7 +29,7 @@ class App extends Component {
             <div>
                 <div className="error-tips1">
                     <p>页面自动跳转</p>
-                    <p>等待时间：{seconds} 秒！</p>
+                    <p>等待时间：<b>{seconds}</b> 秒！</p>
                 </div>
             </div>
         );
