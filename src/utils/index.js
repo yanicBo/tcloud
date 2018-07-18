@@ -6,7 +6,7 @@ export { timestampFromat, getTimeStamp } from './moment';
 
 export { getPath } from './path';
 
-export { ticket, addKey, deleteSession, session } from './tools';
+export { ticket, addKey, deleteSession, session, getStateName } from './tools';
 
 export { filterRequest } from './filter_request';
 

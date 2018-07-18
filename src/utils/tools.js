@@ -38,3 +38,18 @@ export const addKey = (obj) => {
     }
     return obj
 }
+
+/**
+ * 根据状态转换名称
+ * @param <Number> state 状态
+ * @param <Aarray<Object>> data 所有状态映射
+ */
+export const getStateName = (state, data) => {
+    var result = '';
+    for(var key in data){
+        if(data[key].id === state){
+            result = data[key].name;
+        }
+    }
+    return result
+}

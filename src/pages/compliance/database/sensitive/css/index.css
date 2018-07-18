@@ -1,0 +1,64 @@
+.sensitive .search{
+    position: relative;
+}
+.sensitive .search-tab{
+    position: absolute;
+    width: 120px;
+    top: 10px;
+    right: 10px;
+    z-index: 0;
+}
+
+.sensitive .option{
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+.sensitive .default-search{
+    overflow: hidden;
+}
+.sensitive .text-search{
+    border-top: 1px #eee solid;
+    border-bottom: 1px #eee solid;
+    margin-top: 10px;
+    padding-top: 10px; 
+    padding-bottom: 15px;
+    overflow: hidden;
+    background: #f5f5f5;
+}
+.sensitive .btn-search{
+    width: 504px;
+    overflow: hidden;
+    margin-top: 15px;
+    text-align: right;
+}
+.sensitive .btn-search button{
+    margin-left: 10px;
+}
+.sensitive .height-search{
+    overflow: hidden;
+}
+.sensitive .height-search .standard-form-row{
+    overflow: hidden;
+    margin-top: 10px;
+}
+.sensitive .height-search .ant-form-item-control-wrapper, .sensitive .height-search .ant-calendar-picker{
+    width: 344px;
+}
+
+/* 操作列 */
+.sensitive .options-style{
+    
+}
+.sensitive .options-style .inline-block{
+    padding: 0 5px;
+    height: 14px;
+    line-height: 14px;
+    overflow: hidden;
+}
+.sensitive .options-style .inline-block:first-child{
+    border-right: 1px #4d7bfe solid; 
+}
+.sensitive .options-style .ant-dropdown-trigger{
+    color: #4d7bfe;
+    cursor: pointer;
+}

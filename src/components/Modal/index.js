@@ -5,7 +5,8 @@ import './index.css';
 class App extends Component {
 
     // 判断按钮类型
-    btnType = (btnType, btnName, iconType, showModal) => {
+    btnType = () => {
+        const { btnName, iconType, btnType, showModal } = this.props;
         if (btnType === "button") {
             return (
                 <Button onClick={showModal}>
@@ -24,11 +25,25 @@ class App extends Component {
         }
     }
 
-    render() {
-        const { btnName, component, title, iconType, btnType, handleOk, visible, showModal, handleCancel } = this.props;
-        return (
-            <div className="tcloud-modal">
-                {this.btnType(btnType, btnName, iconType, showModal)}
+    modalType = () => {
+        const { component, title, handleOk, visible, handleCancel } = this.props;
+        if (this.props.footer === true) {
+            return (
+                <Modal
+                    maskClosable={false}
+                    title={title}
+                    visible={visible}
+                    onOk={handleOk}
+                    onCancel={handleCancel}
+                    footer={null}
+                >
+                    <div>
+                        {component}
+                    </div>
+                </Modal>
+            )
+        } else {
+            return (
                 <Modal
                     maskClosable={false}
                     title={title}
@@ -40,6 +55,16 @@ class App extends Component {
                         {component}
                     </div>
                 </Modal>
+            )
+        }
+    }
+
+    render() {
+        
+        return (
+            <div className="tcloud-modal">
+                {this.btnType()}
+                {this.modalType()}
             </div>
         );
     }

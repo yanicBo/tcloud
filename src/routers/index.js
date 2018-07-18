@@ -44,6 +44,15 @@ const App = (props) => (
     </Bundle>
 );
 
+// 合规
+const Compliance = (props) => (
+    <Bundle load={() => import('../pages/compliance')}>
+        {
+            (Compliance) => Compliance ? <Compliance {...props} /> : <div className="loading"><Spin size="large" /></div>
+        }
+    </Bundle>
+);
+
 const RootRouter = (props) => {
     return (
         <Switch>
@@ -52,6 +61,7 @@ const RootRouter = (props) => {
             <Route path="/logistics" render={() => <Lgt />} />
             <Route path="/newp" render={() => <Newp />} />
             <Route path="/app" render={() => <App />} />
+            <Route path="/compliance" render={() => <Compliance />} />
         </Switch>
     )
 };

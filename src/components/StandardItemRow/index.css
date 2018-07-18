@@ -1,0 +1,15 @@
+.standard-item-row{
+    clear: both;
+}
+.standard-item-row .label{
+    float: left;
+    width: 80px;
+    line-height: 30px;
+    text-align: right;
+    font-weight: bold;
+}
+.standard-item-row .items{
+    float: left;
+    width: 144px;
+    line-height: 30px;
+}

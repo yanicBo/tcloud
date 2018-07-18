@@ -10,6 +10,11 @@ export const menuMain = [
         "id": "31"
     },
     {
+        "name": "合规",
+        "router": "compliance",
+        "id": "31"
+    },
+    {
         "name": "销售",
         "router": "oms",
         "id": "2"

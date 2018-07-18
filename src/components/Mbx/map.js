@@ -10,7 +10,7 @@ export const breadcrumbNameMap ={
     '/logistics/customs/log': '操作日志',
 
     // 新品开发
-    '/newp': '新品开发',
+    '/newp': '开发',
 
     '/newp/basics': '基础数据',
     '/newp/basics/warehouse': '仓库关系',
@@ -29,7 +29,7 @@ export const breadcrumbNameMap ={
     '/newp/dev/first': '首单申请',
 
     // 订单管理
-    '/oms': '订单管理',
+    '/oms': '订单',
 
     '/oms/platform': '平台订单',
     '/oms/platform/smt': '速卖通订单',
@@ -54,4 +54,13 @@ export const breadcrumbNameMap ={
 
     '/app/urc': '用户中心',
     '/app/urc/organize': '组织架构',
+
+    // 合规
+    '/compliance': '合规',
+    '/compliance/database': '资料库',
+    '/compliance/database/sensitive': '敏感词库',
+    '/compliance/database/sku': '敏感SKU库',
+    
+    '/compliance/setting': '基础设置',
+    '/compliance/setting/trademar': '商标类别',
 }

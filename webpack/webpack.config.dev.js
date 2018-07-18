@@ -18,6 +18,18 @@ const webpackConfigDev = {
             '/customs/api/': {
                 target: 'http://192.168.201.211:8000',
                 changeOrigin: true
+            },
+            '/oms/order/manage/motan/': {
+                target: 'http://192.168.201.211:8000',
+                changeOrigin: true
+            },
+            '/oms/order/grab/motan/': {
+                target: 'http://192.168.201.211:8000',
+                changeOrigin: true
+            },
+            '/mockjsdata/': {
+                target: 'http://192.168.201.211:9090',
+                changeOrigin: true
             }
         }
     }
