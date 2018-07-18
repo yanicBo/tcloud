@@ -42,7 +42,7 @@ class Options extends Component {
                     <Modal
                         component={(<Detail />)}
                         btnName="查看"
-                        title={item.sensitive}
+                        title="查看"
                         btnType="font"
                         visible={visible}
                         showModal={this.showModal}

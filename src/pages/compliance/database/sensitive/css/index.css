@@ -46,9 +46,6 @@
 }
 
 /* 操作列 */
-.sensitive .options-style{
-    
-}
 .sensitive .options-style .inline-block{
     padding: 0 5px;
     height: 14px;
@@ -61,4 +58,9 @@
 .sensitive .options-style .ant-dropdown-trigger{
     color: #4d7bfe;
     cursor: pointer;
+}
+
+/* 详情页 */
+.sensitive-detail .ant-form-item{
+    margin-bottom: 10px;
 }

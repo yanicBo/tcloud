@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
-import { Form } from 'antd';
+import { Form, Spin } from 'antd';
 
 import Search from "./search/index";
 import List from "./list/index";
@@ -50,12 +50,15 @@ class App extends Component {
     }
 
     render() {
+        const { loading } = this.props.list_reducer;
         return (
             <div className="sensitive">
                 <Search {...this.props} listFetch={this.listFetch} tagValue={this.state.tagValue} onReset={this.onReset}/>
                 <div className="breadcrumb padding-sm overflow-hidden margin-md-top">
-                    <Option />
-                    <List {...this.props} listFetch={this.listFetch}/>
+                    <Spin spinning={loading} delay={500}>
+                        <Option />
+                        <List {...this.props} listFetch={this.listFetch}/>
+                    </Spin>
                 </div>
             </div>
         );
