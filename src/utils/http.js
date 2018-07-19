@@ -210,7 +210,7 @@ export const req = {
                         }
                     }
                 } else {
-                    message.error('服务器响应为空.');
+                    console.log('其他错误.');
                     return false;
                 }
 
