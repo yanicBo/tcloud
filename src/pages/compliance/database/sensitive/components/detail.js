@@ -43,7 +43,7 @@ class App extends Component {
                     </Col>
                     <Col span={12}>
                         <StandardItemRow title="国家：">
-                            { item.country }
+                            { item.country.name }
                         </StandardItemRow>
                     </Col>
                 </Row>

@@ -26,6 +26,21 @@ class Detail extends Component {
     }
 
     render() {
+        const { item } = this.props;
+        const countryArr = [];
+        const trademarkArr = [];
+        var initSensitive = '';
+        var initSensitivityGrade = '';
+        if(item){
+            initSensitive = item.sensitive;
+            initSensitivityGrade = item.sensitivityGrade;
+            for(var key in item.country){
+                countryArr.push(item.country[key].id);
+                trademarkArr.push(item.trademark[key].code);
+            }
+        }
+        
+
         const { getFieldDecorator } = this.props.form;
         const { platform, country, trademark } = this.state;
 
@@ -42,6 +57,7 @@ class Detail extends Component {
                         label="敏感词"
                     >
                         {getFieldDecorator('sensitive', {
+                            initialValue: initSensitive,
                             rules: [{
                                 required: true, message: '请输入敏感词.',
                             }],
@@ -54,6 +70,7 @@ class Detail extends Component {
                         label="敏感等级"
                     >
                         {getFieldDecorator('sensitivityGrade', {
+                            initialValue: initSensitivityGrade,
                             rules: [{
                                 required: true, message: '请选择敏感等级.',
                             }],
@@ -78,12 +95,16 @@ class Detail extends Component {
                         label="国家"
                     >
                         {getFieldDecorator('country', {
+                            initialValue: countryArr,
                             rules: [{
-                                required: true, message: '请选择国家，支持多选.',
+                                required: true, 
+                                message: '请选择国家，支持多选.',
+                                type: 'array'
                             }],
                         })(
                             <Select
                                 mode="multiple"
+                                allowClear
                                 placeholder="请选择"
                             >
                                 {
@@ -105,6 +126,7 @@ class Detail extends Component {
                         label="商标类别"
                     >
                         {getFieldDecorator('trademark', {
+                            initialValue: trademarkArr,
                             rules: [{
                                 required: true, message: '请选择商标类别，支持多选.',
                             }],
@@ -117,9 +139,10 @@ class Detail extends Component {
                                     trademark.map((item, index) => {
                                         if (item.id !== 0) {
                                             return (
-                                                <Option key={index} value={item.id}>{item.name}</Option>
+                                                <Option key={index} value={item.code}>{item.name}</Option>
                                             )
                                         }
+                                        
                                     })
                                 }
                             </Select>

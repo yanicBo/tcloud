@@ -52,9 +52,6 @@
     line-height: 14px;
     overflow: hidden;
 }
-.sensitive .options-style .inline-block:first-child{
-    border-right: 1px #4d7bfe solid; 
-}
 .sensitive .options-style .ant-dropdown-trigger{
     color: #4d7bfe;
     cursor: pointer;

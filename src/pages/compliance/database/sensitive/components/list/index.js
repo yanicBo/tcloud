@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Table, Pagination, message, Row, Col } from 'antd';
 
-import Options from './Options';
+import Options from './options';
 import { page } from '../../../../../../configs';
 import { req, getStateName } from '../../../../../../utils';
 import { useState, active, grade } from '../../../../data';
@@ -41,7 +41,7 @@ class List extends Component {
                                 <Col span={24}>禁售平台：{record.salePlatform}</Col>
                             </Row>
                             <Row gutter={24}>
-                                <Col span={24}>禁售国家：{record.county.name}</Col>
+                                <Col span={24}>禁售国家：{record.country.name}</Col>
                             </Row>
                             <Row gutter={24}>
                                 <Col span={24}>敏感等级：{getStateName(record.sensitivityGrade, grade)}</Col>
