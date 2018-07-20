@@ -1,12 +1,17 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Dropdown, Menu, Icon } from 'antd';
 
 import Modal from '../../../../../components/Modal';
 import Detail from './addEdit';
+import Import from '../../../../../components/Import';
+import Export from './export';
 
 class Option extends Component {
     state = {
-        visible: false
+        addVisible: false,
+        importVisible: false,
+        exportVisible: false,
     }
     // 确定
     handleOk = (e) => {
@@ -23,16 +28,16 @@ class Option extends Component {
         
     }
     // 打开弹窗
-    showModal = () => {
+    showModal = (name) => {
         this.setState({
-            visible: true,
+            [name]: true,
         });
     };
 
     // 取消
-    handleCancel = () => {
+    handleCancel = (name) => {
         this.setState({
-            visible: false,
+            [name]: false,
         });
     }
 
@@ -43,7 +48,7 @@ class Option extends Component {
                 <Menu.Item key="2">批量删除</Menu.Item>
             </Menu>
         );
-        const { visible } = this.state;
+        const { addVisible, importVisible, exportVisible  } = this.state;
         return (
             <div className="option">
                 <div className="pull-left">
@@ -60,14 +65,35 @@ class Option extends Component {
                         title="新增词库"
                         iconType="plus"
                         btnType="button"
-                        visible={visible}
-                        showModal={this.showModal}
+                        visible={addVisible}
+                        showModal={() => this.showModal('addVisible')}
                         handleOk={this.handleOk}
-                        handleCancel={this.handleCancel}
+                        handleCancel={() => this.handleCancel('addVisible')}
                     />
-                    <Button className="margin-xm-right"><Icon type="download" style={{ fontSize: 16 }} /> 数据导入</Button>
-                    <Button className="margin-xm-right"><Icon type="export" style={{ fontSize: 16 }} /> 数据导出</Button>
-                    <Button><Icon type="api" style={{ fontSize: 16 }} /> 爬虫抓取</Button>
+                    <Modal
+                        component={(<Import />)}
+                        btnName="数据导入"
+                        title="敏感词导入"
+                        iconType="download"
+                        btnType="button"
+                        visible={importVisible}
+                        showModal={() => this.showModal('importVisible')}
+                        handleOk={this.handleOk}
+                        handleCancel={() => this.handleCancel('importVisible')}
+                        footer={true}
+                    />
+                    <Modal
+                        component={(<Export />)}
+                        btnName="数据导出"
+                        title="数据导出"
+                        iconType="export"
+                        btnType="button"
+                        visible={exportVisible}
+                        showModal={() => this.showModal('exportVisible')}
+                        handleOk={this.handleOk}
+                        handleCancel={() => this.handleCancel('exportVisible')}
+                    />
+                    <Link className="ant-btn margin-sm-left" to="/compliance/database/sensitive/reptilian"><Icon type="api" style={{ fontSize: 16 }} /> 爬虫抓取</Link>
                 </div>
             </div>
         );

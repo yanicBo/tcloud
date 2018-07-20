@@ -1,7 +1,7 @@
-.sensitive .search{
+.reptilian .search{
     position: relative;
 }
-.sensitive .search-tab{
+.reptilian .search-tab{
     position: absolute;
     width: 120px;
     top: 10px;
@@ -9,14 +9,14 @@
     z-index: 0;
 }
 
-.sensitive .option{
+.reptilian .option{
     overflow: hidden;
     margin-bottom: 10px;
 }
-.sensitive .default-search{
+.reptilian .default-search{
     overflow: hidden;
 }
-.sensitive .text-search{
+.reptilian .text-search{
     border-top: 1px #eee solid;
     border-bottom: 1px #eee solid;
     margin-top: 10px;
@@ -25,47 +25,45 @@
     overflow: hidden;
     background: #fafafa;
 }
-.sensitive .btn-search{
+.reptilian .btn-search{
     width: 504px;
     overflow: hidden;
     margin-top: 15px;
     text-align: right;
 }
-.sensitive .btn-search button{
+.reptilian .btn-search button{
     margin-left: 10px;
 }
-.sensitive .height-search{
+.reptilian .height-search{
     overflow: hidden;
 }
-.sensitive .height-search .standard-form-row{
+.reptilian .height-search .standard-form-row{
     overflow: hidden;
     margin-top: 10px;
 }
-.sensitive .height-search .ant-form-item-control-wrapper, .sensitive .height-search .ant-calendar-picker{
+.reptilian .height-search .ant-form-item-control-wrapper, .reptilian .height-search .ant-calendar-picker{
     width: 344px;
 }
 
 /* 操作列 */
-.sensitive .options-style .inline-block{
+.reptilian .options-style .inline-block{
     padding: 0 5px;
     height: 14px;
     line-height: 14px;
     overflow: hidden;
+    text-align: center;
 }
-.sensitive .options-style .inline-block:first-child{
-    border-right: 1px #4d7bfe solid; 
-}
-.sensitive .options-style .ant-dropdown-trigger{
+
+.reptilian .options-style .ant-dropdown-trigger{
     color: #4d7bfe;
     cursor: pointer;
 }
 
 /* 详情页 */
-.sensitive-detail .ant-form-item{
+.reptilian-detail .ant-form-item{
     margin-bottom: 10px;
 }
 
-.tcloud-export .ant-checkbox-wrapper{
-    width: 100px;
-    margin-bottom: 5px;
+.reptilian .tcloud-modal{
+    margin-left: 0px;
 }

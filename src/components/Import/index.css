@@ -1,0 +1,32 @@
+.tcloud-import .btn{
+    position: absolute; 
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    border-top: 1px solid #e8e8e8;
+    padding: 10px 16px;
+    text-align: right;
+    border-radius: 0 0 4px 4px;
+    background: #fff;
+}
+.tcloud-import .btn .ant-btn{
+    margin-left: 10px;
+}
+.tcloud-import .btn-height{
+    height: 53px;
+}
+
+.tcloud-import .ant-radio-wrapper{
+    display: block;
+    height: 30px;
+    line-height: 30px;
+}
+.tcloud-import .ant-radio-group .font{
+    font-size: 12px;
+    padding-left: 20px;
+    color: #999;
+}
+.verification{
+    text-align: center;
+    padding-top: 20px;
+}

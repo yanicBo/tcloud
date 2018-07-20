@@ -59,6 +59,7 @@ export const breadcrumbNameMap ={
     '/compliance': '合规',
     '/compliance/database': '资料库',
     '/compliance/database/sensitive': '敏感词库',
+    '/compliance/database/sensitive/reptilian': '爬虫抓取',
     '/compliance/database/sku': '敏感SKU库',
     
     '/compliance/setting': '基础设置',
